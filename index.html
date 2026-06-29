@@ -1,0 +1,2589 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D'Import | Productos importados en Chiclayo</title>
+<meta name="description" content="D'Import - Av. Balta 1640, Galería Tacna, Stand 14, Chiclayo. Cuidado capilar, perfumería, maquillaje, accesorios y más. Arma tu pedido y pide directo por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rosa: #E398BC;
+    --rosa-oscuro: #C26B95;
+    --crema: #FFF8F3;
+    --crema2: #FCEEE6;
+    --dorado: #D4A656;
+    --tinta: #2B1B22;
+    --tinta-suave: #5C4750;
+    --linea: rgba(43,27,34,0.12);
+    --radius: 18px;
+    --verde: #25D366;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--crema);
+    color: var(--tinta);
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden;
+    padding-bottom: 90px; /* space for floating bar */
+  }
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; border:none; cursor:pointer; background:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- TOP STRIP ---------- */
+  .top-strip{
+    background: var(--rosa-oscuro);
+    color: var(--crema2);
+    text-align:center;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    padding: 7px 12px;
+    font-weight:500;
+  }
+  .top-strip b{color:var(--dorado);}
+
+  /* ---------- STICKY TOP BAR ---------- */
+  .topbar{
+    position: sticky;
+    top:0;
+    z-index: 60;
+    background: var(--crema);
+    border-bottom: 1px solid var(--linea);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 10px 16px;
+  }
+  .topbar-brand{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size: 1.05rem;
+    color: var(--rosa-oscuro);
+    letter-spacing:0.03em;
+  }
+  .topbar-brand-wrap{
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .topbar-logo{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(142,18,69,0.18);
+  }
+  .cart-btn{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background: var(--rosa-oscuro);
+    color:white;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight:600;
+  }
+  .cart-btn svg{ width:18px; height:18px; }
+  .cart-badge{
+    position:absolute;
+    top:-6px; right:-6px;
+    background: var(--dorado);
+    color: var(--tinta);
+    font-size: 0.7rem;
+    font-weight:700;
+    width:20px; height:20px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    border: 2px solid var(--crema);
+  }
+
+  /* ---------- HEADER / HERO ---------- */
+  header{
+    position:relative;
+    background: linear-gradient(160deg, var(--rosa) 0%, var(--rosa-oscuro) 100%);
+    color: var(--crema);
+    padding: 54px 24px 100px;
+    text-align:center;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.10) 0, transparent 7%),
+      radial-gradient(circle at 85% 25%, rgba(255,255,255,0.08) 0, transparent 6%),
+      radial-gradient(circle at 70% 80%, rgba(212,166,86,0.18) 0, transparent 9%),
+      radial-gradient(circle at 20% 85%, rgba(255,255,255,0.07) 0, transparent 5%);
+    pointer-events:none;
+  }
+  .stand-tag{
+    display:inline-block;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: var(--crema);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    padding: 6px 18px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    position:relative; z-index:2;
+  }
+  .hero-logo{
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    display:block;
+    margin: 0 auto 16px;
+    border: 3px solid rgba(255,255,255,0.55);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    position:relative; z-index:2;
+  }
+  .brand-divina{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size: clamp(2.8rem, 11vw, 5rem);
+    letter-spacing: 0.06em;
+    line-height: 1.0;
+    margin-top: 4px;
+    position:relative; z-index:2;
+    text-shadow: 0 2px 10px rgba(120,40,75,0.25);
+  }
+  .hero-sub{
+    margin-top: 18px;
+    font-size: 1.02rem;
+    color: rgba(255,248,243,0.92);
+    max-width: 480px;
+    margin-inline:auto;
+    line-height:1.6;
+    position:relative; z-index:2;
+  }
+  .hero-note{
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: var(--dorado);
+    font-weight:600;
+    position:relative; z-index:2;
+  }
+  .scallop{
+    position:absolute;
+    left:0; right:0; bottom:-1px;
+    height: 46px;
+    background:
+      radial-gradient(circle at 10px 0, transparent 12px, var(--crema) 13px) 0 0/24px 24px repeat-x;
+  }
+
+  /* ---------- SEARCH BAR ---------- */
+  .search-wrap{
+    padding: 18px 20px 0;
+    margin-top: -56px;
+    position:relative;
+    z-index:6;
+  }
+  .search-box{
+    background: white;
+    border-radius: 999px;
+    box-shadow: 0 4px 18px rgba(142,18,69,0.12);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding: 12px 16px;
+    border: 1px solid var(--linea);
+  }
+  .search-box svg{
+    width:18px; height:18px;
+    color: var(--rosa-oscuro);
+    flex:0 0 auto;
+  }
+  .search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    font-family:'Poppins', sans-serif;
+    font-size: 0.92rem;
+    color: var(--tinta);
+    background:transparent;
+  }
+  .search-box input::placeholder{ color: var(--tinta-suave); }
+  .search-clear{
+    flex:0 0 auto;
+    width:22px; height:22px;
+    border-radius:50%;
+    background: var(--crema2);
+    font-size: 0.75rem;
+    color: var(--tinta-suave);
+  }
+  .search-no-results{
+    text-align:center;
+    color: var(--tinta-suave);
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    display:none;
+  }
+
+  /* ---------- CATEGORY NAV ---------- */
+  .cat-nav{
+    display:flex;
+    gap: 10px;
+    overflow-x:auto;
+    padding: 14px 20px 6px;
+    position:relative;
+    z-index:5;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+  }
+  .cat-nav::-webkit-scrollbar{display:none;}
+  .cat-pill{
+    flex:0 0 auto;
+    background: white;
+    border: 1px solid var(--linea);
+    color: var(--rosa-oscuro);
+    font-size: 0.85rem;
+    font-weight:600;
+    padding: 10px 18px;
+    border-radius: 999px;
+    box-shadow: 0 4px 14px rgba(142,18,69,0.10);
+    white-space:nowrap;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .cat-pill:hover{ background: var(--rosa); color:white; transform: translateY(-1px);}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-intro{ text-align:center; padding: 48px 24px 8px; }
+  .eyebrow{
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rosa);
+    font-weight:600;
+  }
+  .section-title{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    margin-top:8px;
+    color: var(--tinta);
+  }
+
+  /* ---------- CATEGORY BLOCKS ---------- */
+  .cat-block{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 36px 18px 6px;
+  }
+  .cat-block-head{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    margin-bottom: 16px;
+    padding-left: 4px;
+  }
+  .cat-block-emoji{ font-size:1.5rem; }
+  .cat-block-title{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size: 1.25rem;
+    color: var(--rosa-oscuro);
+  }
+
+  .product-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (min-width: 720px){
+    .product-grid{ grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .product-card{
+    background: white;
+    border-radius: var(--radius);
+    overflow:hidden;
+    border: 1px solid var(--linea);
+    box-shadow: 0 6px 18px rgba(142,18,69,0.07);
+    display:flex;
+    flex-direction:column;
+  }
+  .product-thumb{
+    height: 110px;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 2.1rem;
+    background: var(--crema2);
+    overflow:hidden;
+    position: relative;
+  }
+  .product-thumb img{
+    width:100%; height:100%;
+    object-fit: cover;
+  }
+  .product-badge{
+    position:absolute;
+    top:6px; left:6px;
+    z-index:2;
+    font-size: 0.62rem;
+    font-weight:700;
+    padding: 3px 8px;
+    border-radius: 999px;
+    color:white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .badge-popular{ background: #E2603A; }
+  .badge-nuevo{ background: #4C9A6B; }
+  .share-btn{
+    position:absolute;
+    top:6px; right:6px;
+    z-index:2;
+    width:26px; height:26px;
+    border-radius:50%;
+    background: rgba(255,255,255,0.92);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .share-btn svg{ width:14px; height:14px; color: var(--rosa-oscuro); }
+  .product-body{
+    padding: 12px 13px 14px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+  }
+  .product-name{
+    font-weight:600;
+    font-size: 0.88rem;
+    line-height:1.3;
+    min-height: 2.4em;
+  }
+  .product-price{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    color: var(--rosa);
+    font-size: 1.05rem;
+    margin-top: 6px;
+  }
+  .product-actions{
+    margin-top: auto;
+    padding-top: 10px;
+  }
+  .add-btn{
+    width:100%;
+    background: var(--rosa-oscuro);
+    color:white;
+    font-weight:600;
+    font-size: 0.82rem;
+    padding: 9px 0;
+    border-radius: 10px;
+    transition: background .2s ease, transform .15s ease;
+  }
+  .add-btn:hover{ background: var(--rosa); }
+  .add-btn.in-cart{
+    background: var(--crema2);
+    color: var(--rosa-oscuro);
+    border: 1px solid var(--rosa);
+  }
+
+  .qty-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: var(--crema2);
+    border-radius: 10px;
+    padding: 4px 6px;
+  }
+  .qty-row button{
+    width: 26px; height:26px;
+    background:white;
+    border-radius:7px;
+    font-weight:700;
+    color: var(--rosa-oscuro);
+    font-size: 0.95rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .qty-row span{ font-weight:600; font-size:0.88rem; }
+
+  /* ---------- TRUST / HOW (same as before, condensed) ---------- */
+  .trust{
+    margin: 50px auto 0;
+    max-width: 980px;
+    padding: 0 20px;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 14px;
+  }
+  @media (min-width:720px){ .trust{ grid-template-columns: repeat(5,1fr);} }
+  .trust-item{
+    background: var(--crema2);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align:center;
+    border: 1px solid var(--linea);
+  }
+  .trust-icon{ font-size:1.5rem; }
+  .trust-label{ font-size: 0.8rem; font-weight:600; margin-top:6px; color: var(--tinta); line-height:1.3; }
+
+  .location{
+    max-width: 760px;
+    margin: 64px auto 0;
+    padding: 28px 24px;
+    background: linear-gradient(135deg, var(--crema2), white);
+    border-radius: 22px;
+    border: 1px solid var(--linea);
+    display:flex;
+    flex-wrap:wrap;
+    gap: 20px;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .location-info strong{ display:block; font-size:1.1rem; margin-bottom:4px; }
+  .location-info span{ color: var(--tinta-suave); font-size: 0.9rem; }
+  .btn-outline{
+    border: 1.5px solid var(--rosa);
+    color: var(--rosa);
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight:600;
+    font-size: 0.88rem;
+    white-space:nowrap;
+  }
+
+  footer.bottom{
+    text-align:center;
+    padding: 36px 22px 22px;
+    font-size: 0.78rem;
+    color: var(--tinta-suave);
+  }
+
+  /* ---------- FLOATING BAR (mobile cart summary) ---------- */
+  .float-bar{
+    position: fixed;
+    left:0; right:0; bottom:0;
+    z-index: 55;
+    background: var(--rosa-oscuro);
+    color: white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 13px 18px;
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.18);
+    transform: translateY(110%);
+    transition: transform .3s ease;
+  }
+  .float-bar.show{ transform: translateY(0); }
+  .float-bar-info{ font-size: 0.85rem; }
+  .float-bar-info b{ color: var(--dorado); }
+  .float-bar-btn{
+    background: var(--dorado);
+    color: var(--tinta);
+    font-weight:700;
+    font-size: 0.85rem;
+    padding: 10px 18px;
+    border-radius: 999px;
+  }
+
+  /* ---------- CART DRAWER ---------- */
+  .overlay{
+    position: fixed; inset:0;
+    background: rgba(43,27,34,0.45);
+    z-index: 90;
+    opacity:0;
+    pointer-events:none;
+    transition: opacity .25s ease;
+  }
+  .overlay.show{ opacity:1; pointer-events:auto; }
+
+  .drawer{
+    position: fixed;
+    top:0; right:0;
+    height:100vh;
+    height:100dvh;
+    width: min(390px, 100%);
+    background: var(--crema);
+    z-index: 95;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .drawer.show{ transform: translateX(0); }
+
+  .drawer-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid var(--linea);
+    background: white;
+  }
+  .drawer-head h3{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size: 1.2rem;
+    color: var(--rosa-oscuro);
+  }
+  .drawer-close{
+    width:32px; height:32px;
+    border-radius:50%;
+    background: var(--crema2);
+    font-size: 1.1rem;
+    color: var(--tinta);
+  }
+
+  .drawer-body{
+    flex:1;
+    min-height: 0;
+    overflow-y:auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 18px;
+  }
+  .drawer-empty{
+    text-align:center;
+    color: var(--tinta-suave);
+    padding: 50px 20px;
+    font-size: 0.92rem;
+  }
+  .drawer-empty .big{ font-size:2.4rem; display:block; margin-bottom:10px; }
+
+  .cart-line{
+    display:flex;
+    gap: 12px;
+    align-items:center;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--linea);
+  }
+  .cart-line-thumb{
+    width: 48px; height:48px;
+    border-radius:10px;
+    background: var(--crema2);
+    display:flex; align-items:center; justify-content:center;
+    font-size: 1.4rem;
+    flex:0 0 auto;
+    overflow:hidden;
+  }
+  .cart-line-thumb img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .cart-line-info{ flex:1; min-width:0; }
+  .cart-line-name{ font-size: 0.88rem; font-weight:600; line-height:1.25; }
+  .cart-line-price{ font-size: 0.82rem; color: var(--rosa); font-weight:600; margin-top:2px; }
+  .cart-line-qty{
+    display:flex; align-items:center; gap:6px;
+    margin-top:6px;
+  }
+  .cart-line-qty button{
+    width:22px; height:22px;
+    background: var(--crema2);
+    border-radius:6px;
+    font-weight:700;
+    font-size: 0.85rem;
+    color: var(--rosa-oscuro);
+  }
+  .cart-line-qty span{ font-size: 0.85rem; font-weight:600; min-width:18px; text-align:center; }
+  .cart-line-remove{
+    font-size: 0.74rem;
+    color: var(--tinta-suave);
+    text-decoration: underline;
+    margin-left: 8px;
+  }
+
+  .drawer-foot{
+    padding: 16px 18px 22px;
+    border-top: 1px solid var(--linea);
+    background: white;
+  }
+  .drawer-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom: 14px;
+  }
+  .drawer-total span{ font-size: 0.9rem; color: var(--tinta-suave); }
+  .drawer-total b{
+    font-family:'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--rosa-oscuro);
+  }
+  .drawer-actions{ display:flex; flex-direction:column; gap:10px; }
+  .btn-wa{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    background: var(--verde);
+    color:white;
+    font-weight:700;
+    font-size: 0.92rem;
+    padding: 13px 0;
+    border-radius: 12px;
+  }
+  .btn-wa svg{ width:18px; height:18px; }
+  .btn-clear{
+    text-align:center;
+    font-size: 0.8rem;
+    color: var(--tinta-suave);
+    text-decoration: underline;
+    padding-top: 2px;
+  }
+  .drawer-hint{
+    font-size: 0.76rem;
+    color: var(--tinta-suave);
+    text-align:center;
+    margin-top: 10px;
+    line-height:1.4;
+  }
+
+  /* ---------- PAYMENT SCREEN (inside drawer) ---------- */
+  .pay-screen{
+    padding: 14px 18px 22px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pay-back{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size: 0.85rem;
+    font-weight:600;
+    color: var(--rosa-oscuro);
+    margin-bottom: 14px;
+  }
+  .pay-back svg{ width:16px; height:16px; }
+
+  .pay-total-box{
+    background: var(--crema2);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 18px;
+  }
+  .pay-total-box span{ font-size: 0.85rem; color: var(--tinta-suave); }
+  .pay-total-box b{
+    font-family:'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--rosa-oscuro);
+  }
+
+  .pay-tabs{
+    display:flex;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+  .pay-tab{
+    flex:1;
+    text-align:center;
+    padding: 11px 8px;
+    border-radius: 12px;
+    background: var(--crema2);
+    color: var(--tinta-suave);
+    font-weight:600;
+    font-size: 0.86rem;
+    border: 1.5px solid transparent;
+  }
+  .pay-tab.active{
+    background: white;
+    color: var(--rosa-oscuro);
+    border-color: var(--rosa);
+    box-shadow: 0 4px 12px rgba(142,18,69,0.10);
+  }
+
+  .pay-panel{ display:none; }
+  .pay-panel.active{ display:block; }
+
+  .qr-card{
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    text-align:center;
+    border: 1px solid var(--linea);
+    margin-bottom: 16px;
+  }
+  .qr-card img{
+    width: 180px;
+    max-width:100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  .qr-titular{ font-weight:700; font-size: 0.98rem; color: var(--tinta); }
+  .qr-number{
+    font-size: 0.92rem;
+    color: var(--rosa);
+    font-weight:700;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+  .qr-app-label{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    background: #5C2D91;
+    color:white;
+    font-size: 0.74rem;
+    font-weight:700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  .bank-card{
+    background: white;
+    border: 1px solid var(--linea);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .bank-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 4px;
+  }
+  .bank-name{ font-weight:700; font-size: 0.92rem; color: var(--tinta); }
+  .bank-copy{
+    font-size: 0.74rem;
+    font-weight:600;
+    color: var(--rosa);
+    background: var(--crema2);
+    padding: 4px 10px;
+    border-radius: 8px;
+  }
+  .bank-number{
+    font-family: 'Playfair Display', serif;
+    font-size: 1.02rem;
+    color: var(--rosa-oscuro);
+    letter-spacing: 0.03em;
+    margin-top: 4px;
+  }
+  .bank-titular{
+    font-size: 0.78rem;
+    color: var(--tinta-suave);
+    margin-top: 4px;
+  }
+
+  .pay-field{ margin-top: 18px; }
+  .pay-field label{
+    display:block;
+    font-size: 0.85rem;
+    font-weight:600;
+    margin-bottom: 6px;
+    color: var(--tinta);
+  }
+  .pay-field input[type="text"]{
+    width:100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1.5px solid var(--linea);
+    background: white;
+    font-family:'Poppins', sans-serif;
+    font-size: 0.92rem;
+    color: var(--tinta);
+  }
+  .pay-field input[type="text"]:focus{
+    outline:none;
+    border-color: var(--rosa);
+  }
+
+  .upload-box{
+    margin-top: 8px;
+    border: 1.5px dashed var(--rosa);
+    border-radius: 14px;
+    padding: 20px 14px;
+    text-align:center;
+    background: var(--crema2);
+    cursor:pointer;
+    position:relative;
+  }
+  .upload-box input[type="file"]{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    cursor:pointer;
+  }
+  .upload-box .upload-icon{ font-size:1.8rem; }
+  .upload-box .upload-text{
+    font-size: 0.85rem;
+    font-weight:600;
+    color: var(--rosa-oscuro);
+    margin-top: 6px;
+  }
+  .upload-box .upload-sub{
+    font-size: 0.74rem;
+    color: var(--tinta-suave);
+    margin-top: 2px;
+  }
+  .upload-preview{
+    margin-top: 10px;
+    border-radius: 12px;
+    overflow:hidden;
+    border: 1px solid var(--linea);
+    display:none;
+  }
+  .upload-preview img{
+    width:100%;
+    max-height: 220px;
+    object-fit: contain;
+    background: white;
+    display:block;
+  }
+
+  .pay-submit{
+    width:100%;
+    background: var(--rosa-oscuro);
+    color:white;
+    font-weight:700;
+    font-size: 0.95rem;
+    padding: 14px 0;
+    border-radius: 12px;
+    margin-top: 20px;
+  }
+  .pay-submit:disabled{
+    background: var(--linea);
+    color: var(--tinta-suave);
+  }
+
+  .pay-note{
+    font-size: 0.76rem;
+    color: var(--tinta-suave);
+    text-align:center;
+    margin-top: 12px;
+    line-height:1.4;
+  }
+
+  .pay-success{
+    text-align:center;
+    padding: 40px 20px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pay-success .big{ font-size: 3rem; display:block; margin-bottom:14px; }
+  .pay-success h4{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size: 1.3rem;
+    color: var(--rosa-oscuro);
+    margin-bottom: 10px;
+  }
+  .pay-success p{
+    font-size: 0.88rem;
+    color: var(--tinta-suave);
+    line-height:1.5;
+    max-width: 280px;
+    margin-inline:auto;
+  }
+
+  /* ---------- ADMIN PANEL ---------- */
+  .admin-trigger{
+    display:block;
+    text-align:center;
+    padding: 14px;
+    font-size: 0.72rem;
+    color: var(--tinta-suave);
+    opacity: 0.55;
+  }
+
+  .admin-overlay{
+    position: fixed; inset:0;
+    background: rgba(43,27,34,0.55);
+    z-index: 120;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding: 20px;
+  }
+  .admin-overlay.show{ display:flex; }
+
+  .admin-login-box{
+    background: var(--crema);
+    border-radius: 18px;
+    padding: 28px 24px;
+    width: 100%;
+    max-width: 340px;
+    text-align:center;
+  }
+  .admin-login-box h3{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color: var(--rosa-oscuro);
+    margin-bottom: 16px;
+  }
+  .admin-login-box input{
+    width:100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1.5px solid var(--linea);
+    text-align:center;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+  .admin-login-box input:focus{ outline:none; border-color: var(--rosa); }
+  .admin-login-btn{
+    width:100%;
+    background: var(--rosa-oscuro);
+    color:white;
+    font-weight:700;
+    padding: 12px 0;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+  .admin-login-error{
+    color: #B3261E;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    display:none;
+  }
+  .admin-close-x{
+    position:absolute;
+    top:16px; right:16px;
+    width:30px; height:30px;
+    border-radius:50%;
+    background: var(--crema2);
+    font-size:1rem;
+  }
+
+  .admin-panel{
+    position: fixed;
+    inset:0;
+    background: var(--crema);
+    z-index: 115;
+    display:none;
+    flex-direction:column;
+  }
+  .admin-panel.show{ display:flex; }
+  .admin-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 16px 18px;
+    background: var(--rosa-oscuro);
+    color:white;
+  }
+  .admin-head h3{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size: 1.15rem;
+  }
+  .admin-logout{
+    font-size: 0.78rem;
+    text-decoration:underline;
+    color: rgba(255,255,255,0.85);
+  }
+  .admin-body{
+    flex:1;
+    overflow-y:auto;
+    padding: 16px;
+  }
+  .admin-empty{
+    text-align:center;
+    color: var(--tinta-suave);
+    padding: 60px 20px;
+    font-size: 0.92rem;
+  }
+  .order-card{
+    background: white;
+    border-radius: 16px;
+    border: 1px solid var(--linea);
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .order-card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom: 8px;
+  }
+  .order-id{ font-size: 0.76rem; color: var(--tinta-suave); }
+  .order-date{ font-size: 0.76rem; color: var(--tinta-suave); }
+  .order-method{
+    display:inline-block;
+    font-size: 0.72rem;
+    font-weight:700;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+  .order-method.yape{ background:#5C2D91; color:white; }
+  .order-method.transferencia{ background: var(--dorado); color: var(--tinta); }
+  .order-items{
+    font-size: 0.84rem;
+    color: var(--tinta);
+    margin-bottom: 8px;
+    line-height:1.5;
+  }
+  .order-op{
+    font-size: 0.8rem;
+    color: var(--tinta-suave);
+    margin-bottom: 10px;
+  }
+  .order-op b{ color: var(--tinta); }
+  .order-voucher{
+    border-radius: 10px;
+    overflow:hidden;
+    border: 1px solid var(--linea);
+    margin-bottom: 10px;
+  }
+  .order-voucher img{
+    width:100%;
+    max-height: 240px;
+    object-fit: contain;
+    background: var(--crema2);
+    display:block;
+  }
+  .order-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top: 8px;
+    border-top: 1px dashed var(--linea);
+  }
+  .order-total b{
+    font-family:'Playfair Display', serif;
+    color: var(--rosa-oscuro);
+    font-size: 1.1rem;
+  }
+  .order-delete{
+    font-size: 0.76rem;
+    color: var(--tinta-suave);
+    text-decoration: underline;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="top-strip">✿ Importados de calidad · Arma tu pedido y recógelo en tienda ✿</div>
+
+  <div class="topbar">
+    <div class="topbar-brand-wrap">
+      <img src="images/brand/logo.jpg" alt="D'Import" class="topbar-logo">
+      <span class="topbar-brand">D'Import</span>
+    </div>
+    <button class="cart-btn" id="openCartBtn" aria-label="Ver carrito">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      Carrito
+      <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+    </button>
+  </div>
+
+  <header>
+    <span class="stand-tag">GALERÍA TACNA · STAND 14</span>
+    <img src="images/brand/logo.jpg" alt="D'Import" class="hero-logo">
+    <h1 class="brand-divina">D'IMPORT</h1>
+    <p class="hero-sub">Belleza, cuidado personal y caprichos importados — elegidos para ti.</p>
+    <p class="hero-note">🛍️ Agrega productos a tu carrito y pide en segundos</p>
+    <div class="scallop"></div>
+  </header>
+
+  <div class="search-wrap">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Buscar producto...">
+      <button id="searchClearBtn" class="search-clear" style="display:none;" aria-label="Limpiar búsqueda">✕</button>
+    </div>
+  </div>
+
+  <nav class="cat-nav">
+    <a class="cat-pill" href="#cat-capilar">Cuidado Capilar</a>
+    <a class="cat-pill" href="#cat-perfumeria">Perfumería</a>
+    <a class="cat-pill" href="#cat-maquillaje">Maquillaje y Belleza</a>
+    <a class="cat-pill" href="#cat-accesorios">Accesorios y Bisutería</a>
+    <a class="cat-pill" href="#cat-labiales">Labiales y Gloss</a>
+    <a class="cat-pill" href="#cat-jabones">Jabones</a>
+    <a class="cat-pill" href="#cat-ella">Para Ella</a>
+    <a class="cat-pill" href="#cat-el">Para Él</a>
+    <a class="cat-pill" href="#cat-hogar">Para el Hogar</a>
+    <a class="cat-pill" href="#cat-cocina">Para la Cocina</a>
+    <a class="cat-pill" href="#cat-variados">Variados y Hogar</a>
+    <a class="cat-pill" href="#cat-tecnologia">Tecnología</a>
+    <a class="cat-pill" href="#cat-deporte">Deporte</a>
+    <a class="cat-pill" href="#cat-mascota">Para la Mascota</a>
+    <a class="cat-pill" href="#cat-auto">Para el Auto</a>
+    <a class="cat-pill" href="#cat-halloween">Halloween</a>
+  </nav>
+
+  <div class="search-no-results" id="searchNoResults">😢 No encontramos productos con ese nombre. Intenta con otra palabra.</div>
+
+  <div class="section-intro">
+    <div class="eyebrow">Nuestro catálogo</div>
+    <h2 class="section-title">Elige y agrega a tu carrito</h2>
+  </div>
+
+  <section class="cat-block" id="cat-capilar">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">💇🏻‍♀️</span>
+      <span class="cat-block-title">Cuidado Capilar</span>
+    </div>
+    <div class="product-grid" data-category="Cuidado Capilar"></div>
+  </section>
+
+  <section class="cat-block" id="cat-perfumeria">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🌸</span>
+      <span class="cat-block-title">Perfumería</span>
+    </div>
+    <div class="product-grid" data-category="Perfumería"></div>
+  </section>
+
+  <section class="cat-block" id="cat-maquillaje">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">💄</span>
+      <span class="cat-block-title">Maquillaje y Belleza</span>
+    </div>
+    <div class="product-grid" data-category="Maquillaje y Belleza"></div>
+  </section>
+
+  <section class="cat-block" id="cat-accesorios">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">💍</span>
+      <span class="cat-block-title">Accesorios y Bisutería</span>
+    </div>
+    <div class="product-grid" data-category="Accesorios y Bisutería"></div>
+  </section>
+
+  <section class="cat-block" id="cat-labiales">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">💋</span>
+      <span class="cat-block-title">Labiales y Gloss</span>
+    </div>
+    <div class="product-grid" data-category="Labiales y Gloss"></div>
+  </section>
+
+  <section class="cat-block" id="cat-jabones">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🧼</span>
+      <span class="cat-block-title">Jabones</span>
+    </div>
+    <div class="product-grid" data-category="Jabones"></div>
+  </section>
+
+  <section class="cat-block" id="cat-ella">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">👩</span>
+      <span class="cat-block-title">Para Ella</span>
+    </div>
+    <div class="product-grid" data-category="Para Ella"></div>
+  </section>
+
+  <section class="cat-block" id="cat-el">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🧔</span>
+      <span class="cat-block-title">Para Él</span>
+    </div>
+    <div class="product-grid" data-category="Para Él"></div>
+  </section>
+
+  <section class="cat-block" id="cat-hogar">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🏡</span>
+      <span class="cat-block-title">Para el Hogar</span>
+    </div>
+    <div class="product-grid" data-category="Para el Hogar"></div>
+  </section>
+
+  <section class="cat-block" id="cat-cocina">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🍳</span>
+      <span class="cat-block-title">Para la Cocina</span>
+    </div>
+    <div class="product-grid" data-category="Para la Cocina"></div>
+  </section>
+
+  <section class="cat-block" id="cat-variados">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">📦</span>
+      <span class="cat-block-title">Variados y Hogar</span>
+    </div>
+    <div class="product-grid" data-category="Variados y Hogar"></div>
+  </section>
+
+  <section class="cat-block" id="cat-tecnologia">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🔌</span>
+      <span class="cat-block-title">Tecnología</span>
+    </div>
+    <div class="product-grid" data-category="Tecnología"></div>
+  </section>
+
+  <section class="cat-block" id="cat-deporte">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🏃</span>
+      <span class="cat-block-title">Deporte</span>
+    </div>
+    <div class="product-grid" data-category="Deporte"></div>
+  </section>
+
+  <section class="cat-block" id="cat-mascota">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🐾</span>
+      <span class="cat-block-title">Para la Mascota</span>
+    </div>
+    <div class="product-grid" data-category="Para la Mascota"></div>
+  </section>
+
+  <section class="cat-block" id="cat-auto">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🚗</span>
+      <span class="cat-block-title">Para el Auto</span>
+    </div>
+    <div class="product-grid" data-category="Para el Auto"></div>
+  </section>
+
+  <section class="cat-block" id="cat-halloween">
+    <div class="cat-block-head">
+      <span class="cat-block-emoji">🎃</span>
+      <span class="cat-block-title">Halloween</span>
+    </div>
+    <div class="product-grid" data-category="Halloween"></div>
+  </section>
+
+  <div class="trust">
+    <div class="trust-item"><div class="trust-icon">📦</div><div class="trust-label">Productos importados originales</div></div>
+    <div class="trust-item"><div class="trust-icon">🛒</div><div class="trust-label">Arma tu pedido en línea</div></div>
+    <div class="trust-item"><div class="trust-icon">📍</div><div class="trust-label">Galería Tacna · Stand 14</div></div>
+    <div class="trust-item"><div class="trust-icon">💬</div><div class="trust-label">Confirmas por WhatsApp</div></div>
+    <div class="trust-item"><div class="trust-icon">🕒</div><div class="trust-label">Lun-Sáb 10am-8:30pm</div></div>
+  </div>
+
+  <div class="location">
+    <div class="location-info">
+      <strong>📍 Encuéntranos en Galería Tacna, Stand 14</strong>
+      <span>Av. Balta 1640, Chiclayo — frente a Caja Arequipa</span>
+    </div>
+    <a class="btn-outline" href="https://wa.me/51973978525" target="_blank" rel="noopener">Escribir ahora</a>
+  </div>
+
+  <footer class="bottom">
+    D'Import · Av. Balta 1640, Galería Tacna, Stand 14 · Hecho con 💕 para nuestras clientas
+  </footer>
+
+  <!-- ===================== FLOATING SUMMARY BAR ===================== -->
+  <div class="float-bar" id="floatBar">
+    <div class="float-bar-info"><b id="floatCount">0</b> productos · S/ <span id="floatTotal">0.00</span></div>
+    <button class="float-bar-btn" id="floatBarBtn">Ver carrito</button>
+  </div>
+
+  <!-- ===================== CART DRAWER ===================== -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer" aria-label="Carrito de compras">
+    <div class="drawer-head">
+      <h3>Tu pedido</h3>
+      <button class="drawer-close" id="closeCartBtn" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="drawer-body" id="drawerBody">
+      <!-- injected -->
+    </div>
+    <div class="drawer-foot" id="drawerFoot" style="display:none;">
+      <div class="drawer-total">
+        <span>Total estimado</span>
+        <b>S/ <span id="drawerTotal">0.00</span></b>
+      </div>
+      <div class="drawer-actions">
+        <a class="btn-wa" id="sendWaBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A8.86 8.86 0 0 0 12.05 3.5a8.9 8.9 0 0 0-7.7 13.4L3 21l4.27-1.32a8.9 8.9 0 0 0 4.78 1.38h.01a8.9 8.9 0 0 0 8.9-8.9 8.86 8.86 0 0 0-2.36-6.3zM12.06 19.4a7.4 7.4 0 0 1-3.77-1.03l-.27-.16-2.83.87.88-2.76-.18-.28a7.4 7.4 0 0 1 11.5-9.07 7.36 7.36 0 0 1 2.18 5.25 7.4 7.4 0 0 1-7.5 7.18zm4.06-5.54c-.22-.11-1.3-.64-1.5-.71-.2-.08-.35-.11-.5.11-.15.22-.56.71-.69.85-.13.15-.25.16-.47.06-.22-.11-.92-.34-1.75-1.08-.65-.58-1.08-1.29-1.21-1.51-.13-.22-.01-.34.11-.46.11-.11.25-.28.37-.42.13-.14.17-.24.25-.4.08-.16.04-.3-.03-.42-.08-.11-.5-1.2-.69-1.64-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.38.06-.58.28-.2.22-.78.76-.78 1.85 0 1.09.8 2.14.91 2.29.11.15 1.55 2.36 3.76 3.21 2.2.86 2.2.57 2.6.53.4-.04 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.06-.1-.22-.16-.44-.27z"/></svg>
+          Enviar pedido por WhatsApp
+        </a>
+        <button class="pay-submit" id="openPayBtn" style="margin-top:0;">💳 Pagar con Yape / Transferencia</button>
+        <button class="btn-clear" id="clearCartBtn">Vaciar carrito</button>
+      </div>
+      <p class="drawer-hint">Tu carrito se guarda en este celular. Si vienes a tienda, ábrelo aquí y muéstranoslo — o envíalo antes por WhatsApp.</p>
+    </div>
+
+    <!-- ===================== PAYMENT SCREEN ===================== -->
+    <div class="pay-screen" id="payScreen" style="display:none;">
+      <div class="pay-back" id="payBackBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        Volver al carrito
+      </div>
+
+      <div class="pay-total-box">
+        <span>Total a pagar</span>
+        <b>S/ <span id="payTotalAmount">0.00</span></b>
+      </div>
+
+      <div class="pay-tabs">
+        <button class="pay-tab active" data-tab="yape">Yape</button>
+        <button class="pay-tab" data-tab="transferencia">Transferencia</button>
+      </div>
+
+      <!-- YAPE PANEL -->
+      <div class="pay-panel active" id="panel-yape">
+        <div class="qr-card">
+          <span class="qr-app-label">📱 YAPE</span><br>
+          <img src="images/brand/qr-yape.jpg" alt="QR Yape D'Import">
+          <div class="qr-titular">Anggie Fiorella Tarrillo Rojas</div>
+          <div class="qr-number">+51 985 238 370</div>
+        </div>
+      </div>
+
+      <!-- TRANSFERENCIA PANEL -->
+      <div class="pay-panel" id="panel-transferencia">
+        <div class="bank-card">
+          <div class="bank-card-head">
+            <span class="bank-name">🏦 BCP — Cuenta Soles</span>
+            <span class="bank-copy" data-copy="30570305037075">Copiar</span>
+          </div>
+          <div class="bank-number">305-7030503-7-075</div>
+          <div class="bank-titular">Anggie Fiorella Tarrillo Rojas</div>
+        </div>
+        <div class="bank-card">
+          <div class="bank-card-head">
+            <span class="bank-name">🏦 Cuenta Interbancaria (CCI)</span>
+            <span class="bank-copy" data-copy="00230517030503707516">Copiar</span>
+          </div>
+          <div class="bank-number">002-305-170305037075-16</div>
+          <div class="bank-titular">Anggie Fiorella Tarrillo Rojas</div>
+        </div>
+      </div>
+
+      <div class="pay-field">
+        <label for="opNumberInput">Número de operación *</label>
+        <input type="text" id="opNumberInput" placeholder="Ej: 52837461">
+      </div>
+
+      <div class="pay-field">
+        <label>Adjuntar captura del comprobante *</label>
+        <div class="upload-box" id="uploadBox">
+          <input type="file" id="voucherInput" accept="image/*">
+          <div class="upload-icon">📷</div>
+          <div class="upload-text">Subir captura del comprobante</div>
+          <div class="upload-sub">JPG o PNG</div>
+        </div>
+        <div class="upload-preview" id="uploadPreview">
+          <img id="uploadPreviewImg" alt="Vista previa del comprobante">
+        </div>
+      </div>
+
+      <button class="pay-submit" id="confirmPayBtn" disabled>Confirmar pago</button>
+      <p class="pay-note">Tu comprobante se guarda de forma privada para que D'Import confirme tu pedido. También puedes escribirnos por WhatsApp para una confirmación más rápida.</p>
+    </div>
+
+    <!-- ===================== PAYMENT SUCCESS ===================== -->
+    <div class="pay-success" id="paySuccess" style="display:none;">
+      <span class="big">🎉</span>
+      <h4>¡Pago registrado!</h4>
+      <p>Gracias por tu compra. Hemos recibido tu comprobante y confirmaremos tu pedido a la brevedad. También puedes escribirnos por WhatsApp si quieres avisarnos directamente.</p>
+      <a class="btn-wa" id="successWaBtn" href="#" target="_blank" rel="noopener" style="margin-top:20px; display:inline-flex;">
+        Avisar por WhatsApp
+      </a>
+    </div>
+  </aside>
+
+  <a class="admin-trigger" id="adminTriggerBtn" href="javascript:void(0)">⚙ Panel D'Import</a>
+
+  <!-- ===================== ADMIN LOGIN ===================== -->
+  <div class="admin-overlay" id="adminOverlay">
+    <div class="admin-login-box" style="position:relative;">
+      <button class="admin-close-x" id="adminCloseLogin">✕</button>
+      <h3>Panel privado</h3>
+      <input type="password" id="adminPassInput" placeholder="Clave" inputmode="numeric">
+      <button class="admin-login-btn" id="adminLoginBtn">Entrar</button>
+      <p class="admin-login-error" id="adminLoginError">Clave incorrecta, intenta de nuevo.</p>
+    </div>
+  </div>
+
+  <!-- ===================== ADMIN PANEL ===================== -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="admin-head">
+      <h3>Pedidos recibidos</h3>
+      <button class="admin-logout" id="adminLogoutBtn">Cerrar panel</button>
+    </div>
+    <div class="admin-body" id="adminBody">
+      <!-- injected -->
+    </div>
+  </div>
+
+<script>
+(function(){
+
+  // ---------- CONFIG ----------
+  var WHATSAPP_NUMBER = "51973978525";
+
+  // ---------- PRODUCT CATALOG (catálogo real de D'Import) ----------
+  var PRODUCTS = [
+    // Perfumería
+    { id:"per1", name:"Perfume de Dama Indian Collection 100ml", price:13.00, image:"images/products/original-perfume.jpg", category:"Perfumería" },
+    // Variados y Hogar
+    { id:"var1", name:"Linterna Martillo Multifuncional", price:12.00, image:"images/products/original-linterna-martillo.jpg", category:"Variados y Hogar" },
+    // Accesorios y Bisutería
+    { id:"acc1", name:"Set Vincha + Muñequera x3 piezas (4 colores)", price:6.00, image:"images/products/original-vincha-munequera.jpg", category:"Accesorios y Bisutería" },
+    // Maquillaje y Belleza
+    { id:"maq1", name:"Quitaesmalte con Acetona Fresa 165ml", price:4.00, image:"images/products/original-quitaesmalte.jpg", category:"Maquillaje y Belleza" },
+    { id:"maq2", name:"Crema Corporal Lipo Celeste", price:6.50, image:"images/products/original-lipocream.jpg", category:"Maquillaje y Belleza" },
+    { id:"maq3", name:"Crema Corporal Lipo Rojo Thermogénesis", price:6.50, image:"images/products/original-lipocream-rojo.jpg", category:"Maquillaje y Belleza" },
+    // Accesorios y Bisutería
+    { id:"acc2", name:"Neceser Porta Cosméticos con Espejo", price:19.00, image:"images/products/original-neceser.jpg", category:"Accesorios y Bisutería" },
+    // Variados y Hogar
+    { id:"var2", name:"Barras Deslizantes para Base de Cocina (200kg)", price:13.00, image:"images/products/original-barras-base-cocina.jpg", category:"Variados y Hogar", badge:"nuevo" },
+    { id:"var3", name:"Trapeador Autoexprimible", price:7.50, image:"images/products/original-trapeador.jpg", category:"Variados y Hogar", badge:"nuevo" },
+    // Cuidado Capilar
+    { id:"cap1", name:"Set de 4 Peines + Base Organizadora", price:10.50, image:"images/products/original-set-peines.jpg", category:"Cuidado Capilar", badge:"nuevo" },
+    // Para el Hogar
+    { id:"masajeador-mariposa-0", name:"Masajeador Mariposa", price:4.00, image:"images/products/masajeador-mariposa-0.jpg", category:"Para el Hogar" },
+    { id:"set-de-taper-tomatodo-cuadrado-1", name:"Set de Taper+ Tomatodo Cuadrado", price:9.00, image:"images/products/set-de-taper-tomatodo-cuadrado-1.jpg", category:"Para el Hogar" },
+    { id:"balanza-gramera-2", name:"Balanza Gramera", price:9.00, image:"images/products/balanza-gramera-2.jpg", category:"Para el Hogar" },
+    { id:"kit-de-peines-para-peluqueria-3", name:"Kit de Peines para Peluqueria", price:3.50, image:"images/products/kit-de-peines-para-peluqueria-3.jpg", category:"Para el Hogar" },
+    { id:"pad-mouse-4", name:"Pad Mouse", price:12.00, image:"images/products/pad-mouse-4.jpg", category:"Para el Hogar" },
+    { id:"termo-sport-5", name:"Termo Sport", price:15.00, image:"images/products/termo-sport-5.jpg", category:"Para el Hogar" },
+    { id:"organizador-acrilico-de-maquillaje-6", name:"Organizador Acrilico de Maquillaje", price:19.50, image:"images/products/organizador-acrilico-de-maquillaje-6.jpg", category:"Para el Hogar" },
+    { id:"cortina-de-ducha-7", name:"Cortina de Ducha", price:3.50, image:"images/products/cortina-de-ducha-7.jpg", category:"Para el Hogar" },
+    { id:"plancha-a-vapor-8", name:"Plancha A Vapor", price:12.00, image:"images/products/plancha-a-vapor-8.jpg", category:"Para el Hogar" },
+    { id:"tacho-de-basura-circular-9", name:"Tacho de Basura Circular", price:12.00, image:"images/products/tacho-de-basura-circular-9.jpg", category:"Para el Hogar" },
+    { id:"camiseta-manga-larga-polar-nina-10", name:"Camiseta Manga Larga Polar Niña", price:13.50, image:"images/products/camiseta-manga-larga-polar-nina-10.jpg", category:"Para el Hogar" },
+    { id:"plantilla-en-gel-11", name:"Plantilla en Gel", price:13.00, image:"images/products/plantilla-en-gel-11.jpg", category:"Para el Hogar" },
+    { id:"lipo-cream-12", name:"Lipo Cream", price:6.50, image:"images/products/lipo-cream-12.jpg", category:"Para el Hogar" },
+    { id:"visera-de-paja-fashion-13", name:"Visera de Paja Fashion", price:4.00, image:"images/products/visera-de-paja-fashion-13.jpg", category:"Para el Hogar" },
+    { id:"cinta-led-navidena-14", name:"Cinta Led Navideña", price:7.50, image:"images/products/cinta-led-navidena-14.jpg", category:"Para el Hogar" },
+    { id:"piso-de-navidad-15", name:"Piso de Navidad", price:3.00, image:"images/products/piso-de-navidad-15.jpg", category:"Para el Hogar" },
+    { id:"funda-de-inodoro-navidena-16", name:"Funda de Inodoro Navideña", price:16.00, image:"images/products/funda-de-inodoro-navidena-16.jpg", category:"Para el Hogar" },
+    { id:"balanza-inteligente-17", name:"Balanza Inteligente", price:16.00, image:"images/products/balanza-inteligente-17.jpg", category:"Para el Hogar" },
+    { id:"mochila-bolso-18", name:"Mochila Bolso", price:20.00, image:"images/products/mochila-bolso-18.jpg", category:"Para el Hogar" },
+    { id:"rack-de-tv-19", name:"Rack de Tv", price:17.00, image:"images/products/rack-de-tv-19.jpg", category:"Para el Hogar" },
+    { id:"corazon-osito-rosas-de-jabon-20", name:"Corazón Osito+rosas de Jabon", price:2.50, image:"images/products/corazon-osito-rosas-de-jabon-20.jpg", category:"Para el Hogar" },
+    { id:"visera-sport-21", name:"Visera Sport", price:4.00, image:"images/products/visera-sport-21.jpg", category:"Para el Hogar" },
+    { id:"set-de-peines-con-soporte-y-accesorios-22", name:"Set de Peines con Soporte y Accesorios", price:10.50, image:"images/products/set-de-peines-con-soporte-y-accesorios-22.jpg", category:"Para el Hogar" },
+    { id:"trapeador-autoexprimible-23", name:"Trapeador Autoexprimible", price:7.00, image:"images/products/trapeador-autoexprimible-23.jpg", category:"Para el Hogar" },
+    { id:"dispensador-de-papel-toalla-24", name:"Dispensador de Papel Toalla", price:16.00, image:"images/products/dispensador-de-papel-toalla-24.jpg", category:"Para el Hogar" },
+    { id:"rodillera-25", name:"Rodillera", price:4.00, image:"images/products/rodillera-25.jpg", category:"Para el Hogar" },
+    { id:"secadora-de-zapatillas-26", name:"Secadora de Zapatillas", price:20.00, image:"images/products/secadora-de-zapatillas-26.jpg", category:"Para el Hogar" },
+    { id:"barras-para-base-de-cocina-27", name:"Barras para Base de Cocina", price:13.00, image:"images/products/barras-para-base-de-cocina-27.jpg", category:"Para el Hogar" },
+    { id:"foco-con-panel-solar-tipo-camara-28", name:"Foco con Panel Solar Tipo Camara", price:12.50, image:"images/products/foco-con-panel-solar-tipo-camara-28.jpg", category:"Para el Hogar" },
+    { id:"foco-led-recargable-solar-29", name:"Foco Led Recargable Solar", price:9.50, image:"images/products/foco-led-recargable-solar-29.jpg", category:"Para el Hogar" },
+    { id:"joyero-gamuza-30", name:"Joyero Gamuza", price:7.00, image:"images/products/joyero-gamuza-30.jpg", category:"Para el Hogar" },
+    { id:"caja-giratorio-organizadora-31", name:"Caja Giratorio Organizadora", price:8.00, image:"images/products/caja-giratorio-organizadora-31.jpg", category:"Para el Hogar" },
+    { id:"tinte-coloriss-32", name:"Tinte Coloriss", price:10.00, image:"images/products/tinte-coloriss-32.jpg", category:"Para el Hogar" },
+    { id:"lampara-ingeniero-33", name:"Lámpara Ingeniero", price:27.50, image:"images/products/lampara-ingeniero-33.jpg", category:"Para el Hogar" },
+    // Halloween
+    { id:"vincha-con-antifaz-34", name:"Vincha con Antifaz", price:2.30, image:"images/products/vincha-con-antifaz-34.jpg", category:"Halloween" },
+    { id:"vinchas-de-luces-35", name:"Vinchas de Luces", price:2.50, image:"images/products/vinchas-de-luces-35.jpg", category:"Halloween" },
+    // Para el Hogar
+    { id:"trapeador-giratorio-magico-36", name:"Trapeador Giratorio Mágico", price:7.00, image:"images/products/trapeador-giratorio-magico-36.jpg", category:"Para el Hogar" },
+    { id:"ampollas-bioxil-37", name:"Ampollas Bioxil", price:8.50, image:"images/products/ampollas-bioxil-37.jpg", category:"Para el Hogar" },
+    { id:"organizador-multifuncional-38", name:"Organizador Multifuncional", price:28.00, image:"images/products/organizador-multifuncional-38.jpg", category:"Para el Hogar" },
+    { id:"rack-con-ruedas-hogar-39", name:"Rack con Ruedas Hogar", price:19.00, image:"images/products/rack-con-ruedas-hogar-39.jpg", category:"Para el Hogar" },
+    { id:"mantel-de-mesa-fundas-de-sillas-40", name:"Mantel de Mesa+fundas de Sillas", price:48.00, image:"images/products/mantel-de-mesa-fundas-de-sillas-40.jpg", category:"Para el Hogar" },
+    { id:"medias-osito-kwaii-41", name:"Medias Osito Kwaii", price:6.00, image:"images/products/medias-osito-kwaii-41.jpg", category:"Para el Hogar" },
+    { id:"joyero-acrilico-de-3-niveles-42", name:"Joyero Acrilico de 3 Niveles", price:15.00, image:"images/products/joyero-acrilico-de-3-niveles-42.jpg", category:"Para el Hogar" },
+    { id:"set-billetera-reloj-gancho-43", name:"Set Billetera +reloj+gancho", price:21.50, image:"images/products/set-billetera-reloj-gancho-43.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-sport-44", name:"Tomatodo Sport", price:7.50, image:"images/products/tomatodo-sport-44.jpg", category:"Para el Hogar" },
+    { id:"set-de-lonchera-kwaii-45", name:"Set de Lonchera Kwaii", price:5.50, image:"images/products/set-de-lonchera-kwaii-45.jpg", category:"Para el Hogar" },
+    { id:"baston-magico-46", name:"Bastón Mágico", price:22.50, image:"images/products/baston-magico-46.jpg", category:"Para el Hogar" },
+    { id:"sofa-inflable-apoya-pie-47", name:"Sofa Inflable Apoya Pie", price:50.00, image:"images/products/sofa-inflable-apoya-pie-47.jpg", category:"Para el Hogar" },
+    { id:"corrector-de-juanete-48", name:"Corrector de Juanete", price:7.00, image:"images/products/corrector-de-juanete-48.jpg", category:"Para el Hogar" },
+    { id:"estuche-de-manicure-49", name:"Estuche de Manicure", price:7.50, image:"images/products/estuche-de-manicure-49.jpg", category:"Para el Hogar" },
+    { id:"tina-masajeadora-de-pies-50", name:"Tina Masajeadora de Pies", price:20.00, image:"images/products/tina-masajeadora-de-pies-50.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-star-1330ml-51", name:"Tomatodo Star 1330ml", price:9.50, image:"images/products/tomatodo-star-1330ml-51.jpg", category:"Para el Hogar" },
+    { id:"levanta-muebles-52", name:"Levanta Muebles", price:10.00, image:"images/products/levanta-muebles-52.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-tapa-rosca-700ml-53", name:"Tomatodo Tapa Rosca 700ml", price:6.00, image:"images/products/tomatodo-tapa-rosca-700ml-53.jpg", category:"Para el Hogar" },
+    { id:"tendedero-pegable-vertical-54", name:"Tendedero Pegable Vertical", price:38.50, image:"images/products/tendedero-pegable-vertical-54.jpg", category:"Para el Hogar" },
+    { id:"lamina-adhesiva-tipo-madera-55", name:"Lámina Adhesiva Tipo Madera", price:7.00, image:"images/products/lamina-adhesiva-tipo-madera-55.jpg", category:"Para el Hogar" },
+    { id:"zapatera-de-7-niveles-56", name:"Zapatera de 7 Niveles", price:28.50, image:"images/products/zapatera-de-7-niveles-56.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-pastillero-57", name:"Tomatodo Pastillero", price:6.50, image:"images/products/tomatodo-pastillero-57.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-para-ninos-500ml-58", name:"Tomatodo para Niños 500ml", price:6.50, image:"images/products/tomatodo-para-ninos-500ml-58.jpg", category:"Para el Hogar" },
+    { id:"taza-feliz-dia-mama-59", name:"Taza Feliz Dia Mamá", price:12.00, image:"images/products/taza-feliz-dia-mama-59.jpg", category:"Para el Hogar" },
+    { id:"cartuchera-calculadora-60", name:"Cartuchera + Calculadora", price:5.50, image:"images/products/cartuchera-calculadora-60.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-770ml-61", name:"Tomatodo 770ml", price:3.50, image:"images/products/tomatodo-770ml-61.jpg", category:"Para el Hogar" },
+    { id:"esterilizador-de-cepillos-62", name:"Esterilizador de Cepillos", price:10.00, image:"images/products/esterilizador-de-cepillos-62.jpg", category:"Para el Hogar" },
+    { id:"caja-organizadora-con-tapa-63", name:"Caja Organizadora con Tapa", price:7.50, image:"images/products/caja-organizadora-con-tapa-63.jpg", category:"Para el Hogar" },
+    { id:"portaretrato-espejo-redondo-64", name:"Portaretrato Espejo Redondo", price:9.50, image:"images/products/portaretrato-espejo-redondo-64.jpg", category:"Para el Hogar" },
+    { id:"estante-de-almacenamiento-65", name:"Estante de Almacenamiento", price:16.00, image:"images/products/estante-de-almacenamiento-65.jpg", category:"Para el Hogar" },
+    { id:"reloj-de-pared-3d-66", name:"Reloj de Pared 3d", price:21.00, image:"images/products/reloj-de-pared-3d-66.jpg", category:"Para el Hogar" },
+    { id:"mosquitero-67", name:"Mosquitero", price:9.50, image:"images/products/mosquitero-67.jpg", category:"Para el Hogar" },
+    { id:"sandalias-de-perrito-68", name:"Sandalias de Perrito", price:9.00, image:"images/products/sandalias-de-perrito-68.jpg", category:"Para el Hogar" },
+    { id:"masajeador-pulpo-69", name:"Masajeador Pulpo", price:4.00, image:"images/products/masajeador-pulpo-69.jpg", category:"Para el Hogar" },
+    { id:"neceser-de-cosmeticos-70", name:"Neceser de Cosméticos", price:19.00, image:"images/products/neceser-de-cosmeticos-70.jpg", category:"Para el Hogar" },
+    { id:"dispensador-de-papel-higienico-71", name:"Dispensador de Papel Higiénico", price:15.00, image:"images/products/dispensador-de-papel-higienico-71.jpg", category:"Para el Hogar" },
+    { id:"set-de-envases-para-viaje-72", name:"Set de Envases para Viaje", price:3.00, image:"images/products/set-de-envases-para-viaje-72.jpg", category:"Para el Hogar" },
+    { id:"espejo-de-gatito-73", name:"Espejo de Gatito", price:2.50, image:"images/products/espejo-de-gatito-73.jpg", category:"Para el Hogar" },
+    { id:"lonchera-termica-74", name:"Lonchera Térmica", price:3.50, image:"images/products/lonchera-termica-74.jpg", category:"Para el Hogar" },
+    { id:"linterna-martillo-75", name:"Linterna Martillo", price:12.00, image:"images/products/linterna-martillo-75.jpg", category:"Para el Hogar" },
+    { id:"lampara-de-escritorio-nordico-76", name:"Lámpara de Escritorio Nordico", price:18.50, image:"images/products/lampara-de-escritorio-nordico-76.jpg", category:"Para el Hogar" },
+    { id:"tendedero-de-ropa-77", name:"Tendedero de Ropa", price:36.00, image:"images/products/tendedero-de-ropa-77.jpg", category:"Para el Hogar" },
+    { id:"flores-para-mama-78", name:"Flores para Mamá", price:5.00, image:"images/products/flores-para-mama-78.jpg", category:"Para el Hogar" },
+    { id:"paraguas-baston-79", name:"Paraguas Bastón", price:7.50, image:"images/products/paraguas-baston-79.jpg", category:"Para el Hogar" },
+    { id:"perchero-hexagonal-80", name:"Perchero Hexagonal", price:25.00, image:"images/products/perchero-hexagonal-80.jpg", category:"Para el Hogar" },
+    { id:"manguera-de-30metros-81", name:"Manguera de 30metros", price:15.00, image:"images/products/manguera-de-30metros-81.jpg", category:"Para el Hogar" },
+    { id:"organizador-de-lapiceros-82", name:"Organizador de Lapiceros", price:5.00, image:"images/products/organizador-de-lapiceros-82.jpg", category:"Para el Hogar" },
+    { id:"rueda-para-ejercicios-83", name:"Rueda para Ejercicios", price:9.50, image:"images/products/rueda-para-ejercicios-83.jpg", category:"Para el Hogar" },
+    { id:"perchero-gancho-de-acero-55cm-84", name:"Perchero Gancho de Acero 55cm", price:2.50, image:"images/products/perchero-gancho-de-acero-55cm-84.jpg", category:"Para el Hogar" },
+    { id:"taza-personalizada-85", name:"Taza Personalizada", price:12.00, image:"images/products/taza-personalizada-85.jpg", category:"Para el Hogar" },
+    { id:"caja-de-cosmeticos-86", name:"Caja de Cosméticos", price:6.00, image:"images/products/caja-de-cosmeticos-86.jpg", category:"Para el Hogar" },
+    { id:"jabon-liquido-family-doctor-87", name:"Jabon Liquido Family Doctor", price:4.00, image:"images/products/jabon-liquido-family-doctor-87.jpg", category:"Para el Hogar" },
+    { id:"cepillos-electricos-x-3-88", name:"Cepillos Eléctricos X-3", price:7.00, image:"images/products/cepillos-electricos-x-3-88.jpg", category:"Para el Hogar" },
+    { id:"corrector-de-postura-89", name:"Corrector de Postura", price:10.00, image:"images/products/corrector-de-postura-89.jpg", category:"Para el Hogar" },
+    { id:"esfera-con-astronauta-90", name:"Esfera con Astronauta", price:17.00, image:"images/products/esfera-con-astronauta-90.jpg", category:"Para el Hogar" },
+    { id:"cortinas-imantadas-91", name:"Cortinas Imantadas", price:5.80, image:"images/products/cortinas-imantadas-91.jpg", category:"Para el Hogar" },
+    { id:"perchero-doble-92", name:"Perchero Doble", price:19.00, image:"images/products/perchero-doble-92.jpg", category:"Para el Hogar" },
+    { id:"reloj-de-pared-circular-93", name:"Reloj de Pared Circular", price:12.50, image:"images/products/reloj-de-pared-circular-93.jpg", category:"Para el Hogar" },
+    { id:"zapatera-de-9-niveles-94", name:"Zapatera de 9 Niveles", price:30.00, image:"images/products/zapatera-de-9-niveles-94.jpg", category:"Para el Hogar" },
+    { id:"zapatera-sencilla-95", name:"Zapatera Sencilla", price:6.00, image:"images/products/zapatera-sencilla-95.jpg", category:"Para el Hogar" },
+    { id:"ventilador-con-humidificador-detalles-di-96", name:"Ventilador con Humidificador Detalles: Diseño Envolvente Flexible para Una Instalación Fácil de Usar. Ángulo Ajustable Hacia Arriba y Hacia Abajo. Pulverización: Cinco Puertos de Pulverización. Enfriamiento Rápido. S/ 16.50 Casaca Oso Polar", price:45.00, image:"images/products/ventilador-con-humidificador-detalles-di-96.jpg", category:"Para el Hogar" },
+    { id:"tomatodo-oso-1000ml-97", name:"Tomatodo Oso 1000ml", price:11.00, image:"images/products/tomatodo-oso-1000ml-97.jpg", category:"Para el Hogar" },
+    { id:"bolsas-de-agua-caliente-98", name:"Bolsas de Agua Caliente", price:7.50, image:"images/products/bolsas-de-agua-caliente-98.jpg", category:"Para el Hogar" },
+    { id:"osito-rosas-flor-99", name:"Osito+rosas +flor", price:5.00, image:"images/products/osito-rosas-flor-99.jpg", category:"Para el Hogar" },
+    { id:"p-atitas-de-lavadora-100", name:"P’atitas de Lavadora", price:3.50, image:"images/products/p-atitas-de-lavadora-100.jpg", category:"Para el Hogar" },
+    { id:"mini-ventilador-101", name:"Mini Ventilador", price:6.50, image:"images/products/mini-ventilador-101.jpg", category:"Para el Hogar" },
+    { id:"tomatodos-102", name:"Tomatodos", price:17.00, image:"images/products/tomatodos-102.jpg", category:"Para el Hogar" },
+    { id:"base-movible-ajustable-103", name:"Base Movible Ajustable", price:17.00, image:"images/products/base-movible-ajustable-103.jpg", category:"Para el Hogar" },
+    { id:"dispensador-y-organizador-de-papel-104", name:"Dispensador y Organizador de Papel", price:9.50, image:"images/products/dispensador-y-organizador-de-papel-104.jpg", category:"Para el Hogar" },
+    { id:"comoda-osito-105", name:"Comoda Osito", price:18.50, image:"images/products/comoda-osito-105.jpg", category:"Para el Hogar" },
+    { id:"perchero-doble-con-zapatera-106", name:"Perchero Doble con Zapatera", price:44.00, image:"images/products/perchero-doble-con-zapatera-106.jpg", category:"Para el Hogar" },
+    { id:"jabon-tutti-fruti-107", name:"Jabon Tutti Fruti", price:1.00, image:"images/products/jabon-tutti-fruti-107.jpg", category:"Para el Hogar" },
+    { id:"robot-trapeador-108", name:"Robot Trapeador", price:37.00, image:"images/products/robot-trapeador-108.jpg", category:"Para el Hogar" },
+    { id:"taza-magica-109", name:"Taza Mágica", price:15.00, image:"images/products/taza-magica-109.jpg", category:"Para el Hogar" },
+    { id:"ropero-de-4-cuerpos-110", name:"Ropero de 4 Cuerpos", price:58.00, image:"images/products/ropero-de-4-cuerpos-110.jpg", category:"Para el Hogar" },
+    { id:"ropero-de-3-cuerpos-111", name:"Ropero de 3 Cuerpos", price:46.50, image:"images/products/ropero-de-3-cuerpos-111.jpg", category:"Para el Hogar" },
+    { id:"ropero-de-2-cuerpos-112", name:"Ropero de 2 Cuerpos", price:40.00, image:"images/products/ropero-de-2-cuerpos-112.jpg", category:"Para el Hogar" },
+    { id:"cinta-doble-contacto-113", name:"Cinta Doble Contacto", price:4.50, image:"images/products/cinta-doble-contacto-113.jpg", category:"Para el Hogar" },
+    { id:"trapeador-con-balde-114", name:"Trapeador con Balde", price:19.00, image:"images/products/trapeador-con-balde-114.jpg", category:"Para el Hogar" },
+    { id:"alfombra-afelpada-115", name:"Alfombra Afelpada", price:27.00, image:"images/products/alfombra-afelpada-115.jpg", category:"Para el Hogar" },
+    { id:"cortina-de-sala-116", name:"Cortina de Sala", price:16.50, image:"images/products/cortina-de-sala-116.jpg", category:"Para el Hogar" },
+    // Para la Cocina
+    { id:"dispensador-de-ayudin-117", name:"Dispensador de Ayudin", price:3.00, image:"images/products/dispensador-de-ayudin-117.jpg", category:"Para la Cocina" },
+    { id:"rollo-de-papel-aluminio-x5m-118", name:"Rollo de Papel Aluminio X5m", price:2.00, image:"images/products/rollo-de-papel-aluminio-x5m-118.jpg", category:"Para la Cocina" },
+    { id:"sacacorcho-en-forma-de-vino-119", name:"Sacacorcho en Forma de Vino", price:14.00, image:"images/products/sacacorcho-en-forma-de-vino-119.jpg", category:"Para la Cocina" },
+    { id:"organizador-de-huevos-120", name:"Organizador de Huevos", price:7.50, image:"images/products/organizador-de-huevos-120.jpg", category:"Para la Cocina" },
+    { id:"jarra-hervidora-121", name:"Jarra Hervidora", price:18.00, image:"images/products/jarra-hervidora-121.jpg", category:"Para la Cocina" },
+    { id:"organizador-de-microondas-122", name:"Organizador de Microondas", price:16.00, image:"images/products/organizador-de-microondas-122.jpg", category:"Para la Cocina" },
+    { id:"portahuevos-economico-123", name:"Portahuevos Económico", price:6.00, image:"images/products/portahuevos-economico-123.jpg", category:"Para la Cocina" },
+    { id:"juego-de-4-individuales-elegantes-124", name:"Juego de 4 Individuales Elegantes", price:7.50, image:"images/products/juego-de-4-individuales-elegantes-124.jpg", category:"Para la Cocina" },
+    { id:"dispensador-de-cereales-125", name:"Dispensador de Cereales", price:17.00, image:"images/products/dispensador-de-cereales-125.jpg", category:"Para la Cocina" },
+    { id:"condimentero-giratorio-de-12-frascos-126", name:"Condimentero Giratorio de 12 Frascos", price:28.00, image:"images/products/condimentero-giratorio-de-12-frascos-126.jpg", category:"Para la Cocina" },
+    { id:"escurridor-de-platos-sin-tapa-127", name:"Escurridor de Platos Sin Tapa", price:41.00, image:"images/products/escurridor-de-platos-sin-tapa-127.jpg", category:"Para la Cocina" },
+    { id:"maquina-de-mini-donas-128", name:"Máquina de Mini Donas", price:21.00, image:"images/products/maquina-de-mini-donas-128.jpg", category:"Para la Cocina" },
+    { id:"escurridor-de-platos-129", name:"Escurridor de Platos", price:44.00, image:"images/products/escurridor-de-platos-129.jpg", category:"Para la Cocina" },
+    { id:"cortador-de-verduras-130", name:"Cortador de Verduras", price:14.50, image:"images/products/cortador-de-verduras-130.jpg", category:"Para la Cocina" },
+    { id:"taza-con-base-calentadora-131", name:"Taza con Base Calentadora", price:12.00, image:"images/products/taza-con-base-calentadora-131.jpg", category:"Para la Cocina" },
+    { id:"organizador-de-verduras-redondo-132", name:"Organizador de Verduras Redondo", price:62.00, image:"images/products/organizador-de-verduras-redondo-132.jpg", category:"Para la Cocina" },
+    { id:"maquina-pop-corn-133", name:"Máquina Pop Corn", price:41.00, image:"images/products/maquina-pop-corn-133.jpg", category:"Para la Cocina" },
+    { id:"bandeja-de-huevos-acrilico-134", name:"Bandeja de Huevos Acrílico", price:12.50, image:"images/products/bandeja-de-huevos-acrilico-134.jpg", category:"Para la Cocina" },
+    { id:"gallinita-sancochadora-135", name:"Gallinita Sancochadora", price:15.00, image:"images/products/gallinita-sancochadora-135.jpg", category:"Para la Cocina" },
+    { id:"condimentero-giratorio-136", name:"Condimentero Giratorio", price:17.50, image:"images/products/condimentero-giratorio-136.jpg", category:"Para la Cocina" },
+    { id:"cucharas-x12-unidades-137", name:"Cucharas X12 Unidades", price:4.00, image:"images/products/cucharas-x12-unidades-137.jpg", category:"Para la Cocina" },
+    { id:"cuenco-inoxidable-138", name:"Cuenco Inoxidable", price:63.00, image:"images/products/cuenco-inoxidable-138.jpg", category:"Para la Cocina" },
+    { id:"alfombra-doble-cocina-139", name:"Alfombra Doble Cocina", price:14.50, image:"images/products/alfombra-doble-cocina-139.jpg", category:"Para la Cocina" },
+    { id:"dispensador-giratorio-140", name:"Dispensador Giratorio", price:48.00, image:"images/products/dispensador-giratorio-140.jpg", category:"Para la Cocina" },
+    { id:"saca-corcho-141", name:"Saca Corcho", price:1.00, image:"images/products/saca-corcho-141.jpg", category:"Para la Cocina" },
+    { id:"destapador-de-vino-modelo-copa-142", name:"Destapador de Vino Modelo Copa", price:12.50, image:"images/products/destapador-de-vino-modelo-copa-142.jpg", category:"Para la Cocina" },
+    { id:"set-de-cubiertos-con-estuche-143", name:"Set de Cubiertos con Estuche", price:18.50, image:"images/products/set-de-cubiertos-con-estuche-143.jpg", category:"Para la Cocina" },
+    { id:"olla-chocolatera-144", name:"Olla Chocolatera", price:29.50, image:"images/products/olla-chocolatera-144.jpg", category:"Para la Cocina" },
+    { id:"maquina-para-hacer-helados-145", name:"Máquina para Hacer Helados", price:66.00, image:"images/products/maquina-para-hacer-helados-145.jpg", category:"Para la Cocina" },
+    { id:"set-de-bowl-con-tapa-146", name:"Set de Bowl con Tapa", price:7.50, image:"images/products/set-de-bowl-con-tapa-146.jpg", category:"Para la Cocina" },
+    { id:"dispensador-de-arroz-147", name:"Dispensador de Arroz", price:26.00, image:"images/products/dispensador-de-arroz-147.jpg", category:"Para la Cocina" },
+    { id:"lunch-box-148", name:"Lunch Box", price:11.00, image:"images/products/lunch-box-148.jpg", category:"Para la Cocina" },
+    { id:"mini-sarten-con-diseno-149", name:"Mini Sarten con Diseño", price:3.50, image:"images/products/mini-sarten-con-diseno-149.jpg", category:"Para la Cocina" },
+    { id:"man-dil-con-secador-150", name:"Man Dil con Secador", price:4.50, image:"images/products/man-dil-con-secador-150.jpg", category:"Para la Cocina" },
+    { id:"set-de-taper-rectangular-151", name:"Set de Taper Rectángular", price:15.00, image:"images/products/set-de-taper-rectangular-151.jpg", category:"Para la Cocina" },
+    { id:"set-cuchillos-pastel-152", name:"Set Cuchillos Pastel", price:6.50, image:"images/products/set-cuchillos-pastel-152.jpg", category:"Para la Cocina" },
+    { id:"papel-adhesivo-marmol-153", name:"Papel Adhesivo Marmol", price:7.50, image:"images/products/papel-adhesivo-marmol-153.jpg", category:"Para la Cocina" },
+    { id:"papel-adhesivo-kwaii-154", name:"Papel Adhesivo Kwaii", price:6.50, image:"images/products/papel-adhesivo-kwaii-154.jpg", category:"Para la Cocina" },
+    { id:"set-de-termo-mas-tazitas-155", name:"Set de Termo Más Tazitas", price:12.50, image:"images/products/set-de-termo-mas-tazitas-155.jpg", category:"Para la Cocina" },
+    { id:"rallador-picador-multifuncion-156", name:"Rallador Picador Multifunción", price:11.50, image:"images/products/rallador-picador-multifuncion-156.jpg", category:"Para la Cocina" },
+    { id:"set-x7-contenedores-157", name:"Set X7 Contenedores", price:35.00, image:"images/products/set-x7-contenedores-157.jpg", category:"Para la Cocina" },
+    { id:"moldes-redondo-para-kekes-158", name:"Moldes Redondo para Kekes", price:12.50, image:"images/products/moldes-redondo-para-kekes-158.jpg", category:"Para la Cocina" },
+    { id:"picatodo-manual-159", name:"Picatodo Manual", price:5.50, image:"images/products/picatodo-manual-159.jpg", category:"Para la Cocina" },
+    { id:"condimentero-cucharita-160", name:"Condimentero Cucharita", price:1.50, image:"images/products/condimentero-cucharita-160.jpg", category:"Para la Cocina" },
+    { id:"organizador-de-condimentos-161", name:"Organizador de Condimentos", price:9.00, image:"images/products/organizador-de-condimentos-161.jpg", category:"Para la Cocina" },
+    { id:"escurridor-doble-162", name:"Escurridor Doble", price:100.00, image:"images/products/escurridor-doble-162.jpg", category:"Para la Cocina" },
+    { id:"molino-de-cafe-163", name:"Molino de Cafe", price:17.50, image:"images/products/molino-de-cafe-163.jpg", category:"Para la Cocina" },
+    { id:"set-x3-taper-tapa-reforzada-164", name:"Set X3 Taper Tapa Reforzada", price:16.00, image:"images/products/set-x3-taper-tapa-reforzada-164.jpg", category:"Para la Cocina" },
+    { id:"tapas-de-silicona-165", name:"Tapas de Silicona", price:3.50, image:"images/products/tapas-de-silicona-165.jpg", category:"Para la Cocina" },
+    { id:"cocina-electrica-166", name:"Cocina Eléctrica", price:44.00, image:"images/products/cocina-electrica-166.jpg", category:"Para la Cocina" },
+    // Para Ella
+    { id:"rimel-hechizada-167", name:"Rimel Hechizada", price:5.00, image:"images/products/rimel-hechizada-167.jpg", category:"Para Ella" },
+    { id:"rimel-fluffy-lash-168", name:"Rímel Fluffy Lash", price:5.50, image:"images/products/rimel-fluffy-lash-168.jpg", category:"Para Ella" },
+    { id:"rubor-disney-stitch-169", name:"Rubor Disney Stitch", price:14.00, image:"images/products/rubor-disney-stitch-169.jpg", category:"Para Ella" },
+    { id:"rubor-en-barra-maravilla-170", name:"Rubor en Barra Maravilla", price:5.50, image:"images/products/rubor-en-barra-maravilla-170.jpg", category:"Para Ella" },
+    { id:"iluminador-disney-stitch-171", name:"Iluminador Disney Stitch", price:16.50, image:"images/products/iluminador-disney-stitch-171.jpg", category:"Para Ella" },
+    { id:"ojitos-lindos-rimel-jarusa-172", name:"Ojitos Lindos Rimel Jarusa", price:5.00, image:"images/products/ojitos-lindos-rimel-jarusa-172.jpg", category:"Para Ella" },
+    { id:"organizador-de-brochas-173", name:"Organizador de Brochas", price:14.50, image:"images/products/organizador-de-brochas-173.jpg", category:"Para Ella" },
+    { id:"body-reloj-de-arena-174", name:"Body Reloj de Arena", price:29.00, image:"images/products/body-reloj-de-arena-174.jpg", category:"Para Ella" },
+    { id:"conjunto-deportivo-economico-175", name:"Conjunto Deportivo Económico", price:13.50, image:"images/products/conjunto-deportivo-economico-175.jpg", category:"Para Ella" },
+    { id:"tinta-jarulover-176", name:"Tinta Jarulover", price:4.50, image:"images/products/tinta-jarulover-176.jpg", category:"Para Ella" },
+    { id:"brassier-con-broche-delante-177", name:"Brassier con Broche Delante", price:12.00, image:"images/products/brassier-con-broche-delante-177.jpg", category:"Para Ella" },
+    { id:"brassier-latex-copa-a-178", name:"Brassier Latex Copa A", price:10.00, image:"images/products/brassier-latex-copa-a-178.jpg", category:"Para Ella" },
+    { id:"enterizo-color-entero-179", name:"Enterizo Color Entero", price:18.00, image:"images/products/enterizo-color-entero-179.jpg", category:"Para Ella" },
+    { id:"rimel-magnific-180", name:"Rimel Magnific", price:4.00, image:"images/products/rimel-magnific-180.jpg", category:"Para Ella" },
+    { id:"set-de-brochas-kwaii-181", name:"Set de Brochas Kwaii", price:6.50, image:"images/products/set-de-brochas-kwaii-181.jpg", category:"Para Ella" },
+    { id:"enterizo-chica-bonita-182", name:"Enterizo Chica Bonita", price:18.00, image:"images/products/enterizo-chica-bonita-182.jpg", category:"Para Ella" },
+    { id:"depilador-yess-183", name:"Depilador Yess", price:16.50, image:"images/products/depilador-yess-183.jpg", category:"Para Ella" },
+    { id:"alicate-para-unas-184", name:"Alicate para Uñas", price:7.50, image:"images/products/alicate-para-unas-184.jpg", category:"Para Ella" },
+    { id:"rubor-liquido-tieesiee-de-jarusa-185", name:"Rubor Líquido Tieesiee de Jarusa", price:5.00, image:"images/products/rubor-liquido-tieesiee-de-jarusa-185.jpg", category:"Para Ella" },
+    { id:"masajeador-de-rostro-186", name:"Masajeador de Rostro", price:18.00, image:"images/products/masajeador-de-rostro-186.jpg", category:"Para Ella" },
+    { id:"lima-de-unas-187", name:"Lima de Uñas", price:1.20, image:"images/products/lima-de-unas-187.jpg", category:"Para Ella" },
+    { id:"polvo-de-hadas-188", name:"Polvo de Hadas", price:5.00, image:"images/products/polvo-de-hadas-188.jpg", category:"Para Ella" },
+    { id:"laca-oro-babaria-189", name:"Laca Oro Babaria", price:18.00, image:"images/products/laca-oro-babaria-189.jpg", category:"Para Ella" },
+    { id:"lip-gloss-irresistible-190", name:"Lip Gloss Irresistible", price:5.00, image:"images/products/lip-gloss-irresistible-190.jpg", category:"Para Ella" },
+    { id:"oh-honey-labial-matte-191", name:"Oh! Honey Labial Matte", price:4.00, image:"images/products/oh-honey-labial-matte-191.jpg", category:"Para Ella" },
+    { id:"limpiador-de-brochas-192", name:"Limpiador de Brochas", price:13.00, image:"images/products/limpiador-de-brochas-192.jpg", category:"Para Ella" },
+    { id:"cadena-aretes-193", name:"Cadena + Aretes", price:2.50, image:"images/products/cadena-aretes-193.jpg", category:"Para Ella" },
+    { id:"reloj-collar-194", name:"Reloj + Collar", price:10.00, image:"images/products/reloj-collar-194.jpg", category:"Para Ella" },
+    { id:"delineador-de-colores-195", name:"Delineador de Colores", price:2.00, image:"images/products/delineador-de-colores-195.jpg", category:"Para Ella" },
+    { id:"delineador-gatito-196", name:"Delineador Gatito", price:7.00, image:"images/products/delineador-gatito-196.jpg", category:"Para Ella" },
+    { id:"rubor-sello-de-corazon-197", name:"Rubor Sello de Corazón", price:4.50, image:"images/products/rubor-sello-de-corazon-197.jpg", category:"Para Ella" },
+    { id:"rubor-en-barra-198", name:"Rubor en Barra", price:7.50, image:"images/products/rubor-en-barra-198.jpg", category:"Para Ella" },
+    { id:"brasier-mariposa-199", name:"Brasier Mariposa", price:5.00, image:"images/products/brasier-mariposa-199.jpg", category:"Para Ella" },
+    { id:"secadora-de-cabello-200", name:"Secadora de Cabello", price:18.50, image:"images/products/secadora-de-cabello-200.jpg", category:"Para Ella" },
+    { id:"extirpador-de-espinillas-201", name:"Extirpador de Espinillas", price:2.50, image:"images/products/extirpador-de-espinillas-201.jpg", category:"Para Ella" },
+    { id:"bowl-de-tinte-202", name:"Bowl de Tinte", price:3.20, image:"images/products/bowl-de-tinte-202.jpg", category:"Para Ella" },
+    { id:"tenaza-triple-203", name:"Tenaza Triple", price:23.00, image:"images/products/tenaza-triple-203.jpg", category:"Para Ella" },
+    { id:"enterizo-204", name:"Enterizo", price:18.00, image:"images/products/enterizo-204.jpg", category:"Para Ella" },
+    // Deporte
+    { id:"ice-globes-205", name:"Ice Globes", price:8.50, image:"images/products/ice-globes-205.jpg", category:"Deporte" },
+    { id:"parche-para-ojeras-206", name:"Parche para Ojeras", price:10.50, image:"images/products/parche-para-ojeras-206.jpg", category:"Deporte" },
+    // Para Ella
+    { id:"neceser-kwaii-con-espejo-207", name:"Neceser Kwaii con Espejo", price:14.00, image:"images/products/neceser-kwaii-con-espejo-207.jpg", category:"Para Ella" },
+    { id:"cartera-de-colores-con-piedras-208", name:"Cartera de Colores con Piedras", price:18.50, image:"images/products/cartera-de-colores-con-piedras-208.jpg", category:"Para Ella" },
+    { id:"gel-intimo-209", name:"Gel Intimo", price:13.00, image:"images/products/gel-intimo-209.jpg", category:"Para Ella" },
+    { id:"autentica-lip-gloss-210", name:"Autentica Lip Gloss", price:5.00, image:"images/products/autentica-lip-gloss-210.jpg", category:"Para Ella" },
+    { id:"sombras-matte-samantha-211", name:"Sombras Matte Samantha", price:13.50, image:"images/products/sombras-matte-samantha-211.jpg", category:"Para Ella" },
+    { id:"sombras-de-cejas-dancing-212", name:"Sombras de Cejas Dancing", price:4.00, image:"images/products/sombras-de-cejas-dancing-212.jpg", category:"Para Ella" },
+    { id:"plancha-azul-economica-213", name:"Plancha Azul Económica", price:22.00, image:"images/products/plancha-azul-economica-213.jpg", category:"Para Ella" },
+    { id:"peine-alisador-214", name:"Peine Alisador", price:9.50, image:"images/products/peine-alisador-214.jpg", category:"Para Ella" },
+    { id:"discos-de-algodon-215", name:"Discos de Algodón", price:4.00, image:"images/products/discos-de-algodon-215.jpg", category:"Para Ella" },
+    { id:"x-70uni-s-6-00-x-120uni-s-8-00-set-de-3--216", name:"X 70uni : S/ 6.00 X 120uni : S/ 8.00 Set de 3 Piezas (perfume+loción y Colonia)", price:14.00, image:"images/products/x-70uni-s-6-00-x-120uni-s-8-00-set-de-3--216.jpg", category:"Para Ella" },
+    { id:"agua-micelar-aclarate-60ml-217", name:"Agua Micelar Aclarate 60ml", price:6.50, image:"images/products/agua-micelar-aclarate-60ml-217.jpg", category:"Para Ella" },
+    { id:"agua-micelar-aclara-t-120ml-218", name:"Agua Micelar Aclara T 120ml", price:10.50, image:"images/products/agua-micelar-aclara-t-120ml-218.jpg", category:"Para Ella" },
+    { id:"agua-de-rosas-219", name:"Agua de Rosas", price:5.00, image:"images/products/agua-de-rosas-219.jpg", category:"Para Ella" },
+    { id:"removedor-de-maquillaje-220", name:"Removedor de Maquillaje", price:9.00, image:"images/products/removedor-de-maquillaje-220.jpg", category:"Para Ella" },
+    { id:"espuma-de-limpieza-facial-221", name:"Espuma de Limpieza Facial", price:9.00, image:"images/products/espuma-de-limpieza-facial-221.jpg", category:"Para Ella" },
+    { id:"crema-depilatoria-222", name:"Crema Depilatoria", price:22.00, image:"images/products/crema-depilatoria-222.jpg", category:"Para Ella" },
+    { id:"lapiz-delineador-de-cejas-223", name:"Lapiz + Delineador de Cejas", price:5.50, image:"images/products/lapiz-delineador-de-cejas-223.jpg", category:"Para Ella" },
+    { id:"sombras-de-ceja-en-crema-224", name:"Sombras de Ceja en Crema", price:9.00, image:"images/products/sombras-de-ceja-en-crema-224.jpg", category:"Para Ella" },
+    { id:"rizador-pretty-con-peine-225", name:"Rizador Pretty con Peine", price:5.00, image:"images/products/rizador-pretty-con-peine-225.jpg", category:"Para Ella" },
+    { id:"labial-en-barra-miss-226", name:"Labial en Barra Miss", price:5.50, image:"images/products/labial-en-barra-miss-226.jpg", category:"Para Ella" },
+    { id:"desodorante-acl-ara-t-227", name:"Desodorante Acl.ara T", price:7.50, image:"images/products/desodorante-acl-ara-t-227.jpg", category:"Para Ella" },
+    { id:"gel-limpiador-matificante-228", name:"Gel Limpiador Matificante", price:22.50, image:"images/products/gel-limpiador-matificante-228.jpg", category:"Para Ella" },
+    { id:"unas-postizas-229", name:"Uñas Postizas", price:6.00, image:"images/products/unas-postizas-229.jpg", category:"Para Ella" },
+    { id:"unas-adhesivas-230", name:"Uñas Adhesivas", price:9.00, image:"images/products/unas-adhesivas-230.jpg", category:"Para Ella" },
+    { id:"pestanas-imantadas-231", name:"Pestañas Imantadas", price:15.00, image:"images/products/pestanas-imantadas-231.jpg", category:"Para Ella" },
+    { id:"suero-de-retinol-232", name:"Suero de Retinol", price:11.50, image:"images/products/suero-de-retinol-232.jpg", category:"Para Ella" },
+    { id:"tinta-para-labiosthe-game-233", name:"Tinta para Labiosthe Game", price:2.50, image:"images/products/tinta-para-labiosthe-game-233.jpg", category:"Para Ella" },
+    { id:"paleta-de-pie-234", name:"Paleta de Pie", price:2.00, image:"images/products/paleta-de-pie-234.jpg", category:"Para Ella" },
+    { id:"set-de-brochas-sirena-235", name:"Set de Brochas Sirena", price:2.50, image:"images/products/set-de-brochas-sirena-235.jpg", category:"Para Ella" },
+    { id:"rubor-satinado-236", name:"Rubor Satinado", price:6.50, image:"images/products/rubor-satinado-236.jpg", category:"Para Ella" },
+    { id:"iluminador-star-237", name:"Iluminador Star", price:5.50, image:"images/products/iluminador-star-237.jpg", category:"Para Ella" },
+    { id:"exfoliante-flower-secret-238", name:"Exfoliante Flower Secret", price:8.50, image:"images/products/exfoliante-flower-secret-238.jpg", category:"Para Ella" },
+    { id:"faja-corset-239", name:"Faja Corset", price:9.00, image:"images/products/faja-corset-239.jpg", category:"Para Ella" },
+    { id:"labial-matte-en-barra-240", name:"Labial Matte en Barra", price:6.50, image:"images/products/labial-matte-en-barra-240.jpg", category:"Para Ella" },
+    { id:"plancha-rizadora-peine-241", name:"Plancha+ Rizadora+peine", price:37.50, image:"images/products/plancha-rizadora-peine-241.jpg", category:"Para Ella" },
+    { id:"esmalte-para-unas-242", name:"Esmalte para Uñas", price:2.00, image:"images/products/esmalte-para-unas-242.jpg", category:"Para Ella" },
+    { id:"contorno-liquido-243", name:"Contorno Liquido", price:7.00, image:"images/products/contorno-liquido-243.jpg", category:"Para Ella" },
+    { id:"sombras-lavanda-jarusa-244", name:"Sombras Lavanda Jarusa", price:23.00, image:"images/products/sombras-lavanda-jarusa-244.jpg", category:"Para Ella" },
+    { id:"perfiladores-245", name:"Perfiladores", price:1.50, image:"images/products/perfiladores-245.jpg", category:"Para Ella" },
+    { id:"cera-fijadora-de-cabello-en-barra-246", name:"Cera Fijadora de Cabello en Barra", price:15.00, image:"images/products/cera-fijadora-de-cabello-en-barra-246.jpg", category:"Para Ella" },
+    // Labiales y Gloss
+    { id:"labial-matte-nazca-247", name:"Labial Matte Nazca", price:4.00, image:"images/products/labial-matte-nazca-247.jpg", category:"Labiales y Gloss" },
+    { id:"gloss-jarusa-248", name:"Gloss Jarusa", price:7.00, image:"images/products/gloss-jarusa-248.jpg", category:"Labiales y Gloss" },
+    // Para Ella
+    { id:"keratina-249", name:"Keratina", price:10.00, image:"images/products/keratina-249.jpg", category:"Para Ella" },
+    { id:"esmaltes-en-gel-250", name:"Esmaltes en Gel", price:7.50, image:"images/products/esmaltes-en-gel-250.jpg", category:"Para Ella" },
+    { id:"perfume-para-dama-251", name:"Perfume para Dama", price:13.00, image:"images/products/perfume-para-dama-251.jpg", category:"Para Ella" },
+    { id:"corrector-de-ojeras-jarusa-252", name:"Corrector de Ojeras Jarusa", price:5.50, image:"images/products/corrector-de-ojeras-jarusa-252.jpg", category:"Para Ella" },
+    { id:"jabon-dermo-carbon-activado-253", name:"Jabón Dermo Carbón Activado", price:10.00, image:"images/products/jabon-dermo-carbon-activado-253.jpg", category:"Para Ella" },
+    { id:"polo-oversize-254", name:"Polo Oversize", price:12.00, image:"images/products/polo-oversize-254.jpg", category:"Para Ella" },
+    { id:"set-de-tijeras-para-peluqueria-255", name:"Set de Tijeras para Peluqueria", price:6.00, image:"images/products/set-de-tijeras-para-peluqueria-255.jpg", category:"Para Ella" },
+    { id:"diadema-para-skincare-256", name:"Diadema para Skincare", price:7.00, image:"images/products/diadema-para-skincare-256.jpg", category:"Para Ella" },
+    { id:"lampara-de-unas-257", name:"Lampara de Uñas", price:18.50, image:"images/products/lampara-de-unas-257.jpg", category:"Para Ella" },
+    { id:"balsamo-desmaquillante-258", name:"Balsamo Desmaquillante", price:9.50, image:"images/products/balsamo-desmaquillante-258.jpg", category:"Para Ella" },
+    { id:"corta-tips-259", name:"Corta Tips", price:4.50, image:"images/products/corta-tips-259.jpg", category:"Para Ella" },
+    { id:"dove-spray-hidratacion-vitaminas-260", name:"Dove Spray Hidratación + Vitaminas", price:15.00, image:"images/products/dove-spray-hidratacion-vitaminas-260.jpg", category:"Para Ella" },
+    { id:"crema-exfoliante-de-durazno-261", name:"Crema Exfoliante de Durazno", price:9.50, image:"images/products/crema-exfoliante-de-durazno-261.jpg", category:"Para Ella" },
+    { id:"crema-de-colageno-262", name:"Crema de Colágeno", price:16.50, image:"images/products/crema-de-colageno-262.jpg", category:"Para Ella" },
+    { id:"quitaesmalte-263", name:"Quitaesmalte", price:4.00, image:"images/products/quitaesmalte-263.jpg", category:"Para Ella" },
+    { id:"suero-para-crecimiento-de-cabello-264", name:"Suero para Crecimiento de Cabello", price:13.00, image:"images/products/suero-para-crecimiento-de-cabello-264.jpg", category:"Para Ella" },
+    { id:"mascara-de-pestanas-high-sky-265", name:"Máscara de Pestañas High Sky", price:5.00, image:"images/products/mascara-de-pestanas-high-sky-265.jpg", category:"Para Ella" },
+    { id:"lipstick-de-labios-dermosol-266", name:"Lipstick de Labios Dermosol", price:5.00, image:"images/products/lipstick-de-labios-dermosol-266.jpg", category:"Para Ella" },
+    { id:"separador-de-dedos-267", name:"Separador de Dedos", price:1.50, image:"images/products/separador-de-dedos-267.jpg", category:"Para Ella" },
+    { id:"botox-capilar-268", name:"Botox Capilar", price:8.00, image:"images/products/botox-capilar-268.jpg", category:"Para Ella" },
+    { id:"balsamo-labial-dermosol-fruits-269", name:"Bálsamo Labial Dermosol Fruits", price:5.00, image:"images/products/balsamo-labial-dermosol-fruits-269.jpg", category:"Para Ella" },
+    { id:"labial-en-barra-5-en-1-270", name:"Labial en Barra 5 en 1", price:6.00, image:"images/products/labial-en-barra-5-en-1-270.jpg", category:"Para Ella" },
+    { id:"sombras-dulzura-271", name:"Sombras Dulzura", price:7.50, image:"images/products/sombras-dulzura-271.jpg", category:"Para Ella" },
+    { id:"cortaunas-272", name:"Cortauñas", price:2.00, image:"images/products/cortaunas-272.jpg", category:"Para Ella" },
+    { id:"gemas-corporales-273", name:"Gemas Corporales", price:4.00, image:"images/products/gemas-corporales-273.jpg", category:"Para Ella" },
+    { id:"sombras-kit-mi-diario-de-amor-274", name:"Sombras Kit Mi Diario de Amor", price:32.00, image:"images/products/sombras-kit-mi-diario-de-amor-274.jpg", category:"Para Ella" },
+    { id:"pijama-3-en-1-275", name:"Pijama 3 en 1", price:16.50, image:"images/products/pijama-3-en-1-275.jpg", category:"Para Ella" },
+    { id:"set-lima-economica-276", name:"Set Lima Económica", price:2.50, image:"images/products/set-lima-economica-276.jpg", category:"Para Ella" },
+    { id:"vincha-para-maquillaje-277", name:"Vincha para Maquillaje", price:4.00, image:"images/products/vincha-para-maquillaje-277.jpg", category:"Para Ella" },
+    { id:"mascarilla-facial-con-acido-hialuro-278", name:"Mascarilla Facial con Ácido Hialuro.", price:1.50, image:"images/products/mascarilla-facial-con-acido-hialuro-278.jpg", category:"Para Ella" },
+    { id:"paleta-de-sombras-luau-279", name:"Paleta de Sombras Luau", price:26.00, image:"images/products/paleta-de-sombras-luau-279.jpg", category:"Para Ella" },
+    { id:"lapiz-de-cejas-con-cepillo-280", name:"Lápiz de Cejas con Cepillo", price:5.00, image:"images/products/lapiz-de-cejas-con-cepillo-280.jpg", category:"Para Ella" },
+    { id:"labial-en-barra-matte-lapiz-labial-281", name:"Labial en Barra Matte + Lápiz Labial", price:4.50, image:"images/products/labial-en-barra-matte-lapiz-labial-281.jpg", category:"Para Ella" },
+    { id:"peine-desenredante-anti-frizz-282", name:"Peine Desenredante Anti Frizz", price:2.50, image:"images/products/peine-desenredante-anti-frizz-282.jpg", category:"Para Ella" },
+    { id:"iluminador-liquido-jarusa-283", name:"Iluminador Líquido Jarusa", price:5.00, image:"images/products/iluminador-liquido-jarusa-283.jpg", category:"Para Ella" },
+    { id:"serum-facial-con-acido-hialuronico-284", name:"Serum Facial con Ácido Hialurónico", price:7.00, image:"images/products/serum-facial-con-acido-hialuronico-284.jpg", category:"Para Ella" },
+    { id:"crema-skala-lisso-285", name:"Crema Skala Lisso", price:20.00, image:"images/products/crema-skala-lisso-285.jpg", category:"Para Ella" },
+    { id:"crema-skala-lisso-286", name:"Crema Skala Lisso", price:20.00, image:"images/products/crema-skala-lisso-286.jpg", category:"Para Ella" },
+    { id:"crema-skala-12-em-1-287", name:"Crema Skala 12 Em 1", price:20.00, image:"images/products/crema-skala-12-em-1-287.jpg", category:"Para Ella" },
+    { id:"labial-lip-gloss-288", name:"Labial Lip Gloss", price:5.00, image:"images/products/labial-lip-gloss-288.jpg", category:"Para Ella" },
+    // Jabones
+    { id:"jabon-de-arroz-289", name:"Jabón de Arroz", price:4.50, image:"images/products/jabon-de-arroz-289.jpg", category:"Jabones" },
+    { id:"jabon-rejuvenece-290", name:"Jabón Rejuvenece", price:4.50, image:"images/products/jabon-rejuvenece-290.jpg", category:"Jabones" },
+    { id:"jabon-de-lechuga-291", name:"Jabón de Lechuga", price:4.50, image:"images/products/jabon-de-lechuga-291.jpg", category:"Jabones" },
+    { id:"jabon-con-glutathione-292", name:"Jabón con Glutathione", price:4.50, image:"images/products/jabon-con-glutathione-292.jpg", category:"Jabones" },
+    { id:"jabon-de-avena-293", name:"Jabón de Avena", price:4.50, image:"images/products/jabon-de-avena-293.jpg", category:"Jabones" },
+    { id:"jabon-concha-de-nacar-294", name:"Jabón Concha de Nácar", price:4.50, image:"images/products/jabon-concha-de-nacar-294.jpg", category:"Jabones" },
+    // Para Ella
+    { id:"crema-aclarante-aclara-t-295", name:"Crema Aclarante Aclara T", price:17.00, image:"images/products/crema-aclarante-aclara-t-295.jpg", category:"Para Ella" },
+    { id:"cepillo-one-step-296", name:"Cepillo One Step", price:20.00, image:"images/products/cepillo-one-step-296.jpg", category:"Para Ella" },
+    { id:"mi-sueno-lip-gloss-297", name:"Mi Sueño Lip Gloss", price:5.00, image:"images/products/mi-sueno-lip-gloss-297.jpg", category:"Para Ella" },
+    { id:"limpiador-facial-mate-garnier-298", name:"Limpiador Facial Mate Garnier", price:35.00, image:"images/products/limpiador-facial-mate-garnier-298.jpg", category:"Para Ella" },
+    { id:"rizadora-de-cabello-299", name:"Rizadora de Cabello", price:10.00, image:"images/products/rizadora-de-cabello-299.jpg", category:"Para Ella" },
+    { id:"crema-facial-rosas-yacido-hialuronico-300", name:"Crema Facial Rosas Yacido Hialuronico", price:8.00, image:"images/products/crema-facial-rosas-yacido-hialuronico-300.jpg", category:"Para Ella" },
+    { id:"crema-contorno-de-ojos-301", name:"Crema Contorno de Ojos", price:8.00, image:"images/products/crema-contorno-de-ojos-301.jpg", category:"Para Ella" },
+    { id:"serum-de-rosas-302", name:"Serum de Rosas", price:8.00, image:"images/products/serum-de-rosas-302.jpg", category:"Para Ella" },
+    { id:"limpiador-facial-en-gel-303", name:"Limpiador Facial en Gel", price:8.00, image:"images/products/limpiador-facial-en-gel-303.jpg", category:"Para Ella" },
+    { id:"tonico-humectante-facial-304", name:"Tonico Humectante Facial", price:8.00, image:"images/products/tonico-humectante-facial-304.jpg", category:"Para Ella" },
+    { id:"locion-humectante-de-rosas-305", name:"Locion Humectante de Rosas", price:8.00, image:"images/products/locion-humectante-de-rosas-305.jpg", category:"Para Ella" },
+    { id:"labial-matte-alegria-306", name:"Labial Matte Alegria", price:5.00, image:"images/products/labial-matte-alegria-306.jpg", category:"Para Ella" },
+    { id:"exfoliante-de-rostro-307", name:"Exfoliante de Rostro", price:8.00, image:"images/products/exfoliante-de-rostro-307.jpg", category:"Para Ella" },
+    { id:"labial-liquido-y-lapiz-labial-308", name:"Labial Liquido y Lápiz Labial", price:7.00, image:"images/products/labial-liquido-y-lapiz-labial-308.jpg", category:"Para Ella" },
+    { id:"primer-6-en-1-309", name:"Primer 6 en 1", price:12.00, image:"images/products/primer-6-en-1-309.jpg", category:"Para Ella" },
+    { id:"labial-sexy-color-310", name:"Labial Sexy Color", price:4.00, image:"images/products/labial-sexy-color-310.jpg", category:"Para Ella" },
+    { id:"labial-magico-boquita-311", name:"Labial Mágico Boquita", price:5.00, image:"images/products/labial-magico-boquita-311.jpg", category:"Para Ella" },
+    { id:"lapiz-delineador-de-labios-312", name:"Lapiz Delineador de Labios", price:2.50, image:"images/products/lapiz-delineador-de-labios-312.jpg", category:"Para Ella" },
+    { id:"mini-plancha-de-cabello-313", name:"Mini Plancha de Cabello", price:5.00, image:"images/products/mini-plancha-de-cabello-313.jpg", category:"Para Ella" },
+    { id:"base-liquida-efecto-borrador-314", name:"Base Liquida Efecto Borrador", price:12.00, image:"images/products/base-liquida-efecto-borrador-314.jpg", category:"Para Ella" },
+    { id:"corrector-de-ojeras-samtha-315", name:"Corrector de Ojeras Samtha", price:6.50, image:"images/products/corrector-de-ojeras-samtha-315.jpg", category:"Para Ella" },
+    { id:"rodillo-masajeador-316", name:"Rodillo Masajeador", price:7.50, image:"images/products/rodillo-masajeador-316.jpg", category:"Para Ella" },
+    { id:"short-triple-push-up-color-entero-317", name:"Short Triple Push Up Color Entero", price:12.50, image:"images/products/short-triple-push-up-color-entero-317.jpg", category:"Para Ella" },
+    { id:"parches-de-acne-318", name:"Parches de Acne", price:4.00, image:"images/products/parches-de-acne-318.jpg", category:"Para Ella" },
+    // Deporte
+    { id:"base-de-unas-endurecedora-319", name:"Base de Uñas Endurecedora", price:6.50, image:"images/products/base-de-unas-endurecedora-319.jpg", category:"Deporte" },
+    { id:"base-de-unas-pro-fortalecimiento-320", name:"Base de Uñas Pro Fortalecimiento", price:6.50, image:"images/products/base-de-unas-pro-fortalecimiento-320.jpg", category:"Deporte" },
+    { id:"base-de-unas-brillo-secante-321", name:"Base de Uñas Brillo Secante", price:6.50, image:"images/products/base-de-unas-brillo-secante-321.jpg", category:"Deporte" },
+    { id:"base-de-unas-pro-crecimiento-322", name:"Base de Uñas Pro Crecimiento", price:6.50, image:"images/products/base-de-unas-pro-crecimiento-322.jpg", category:"Deporte" },
+    { id:"base-de-unas-brillo-efecto-gel-323", name:"Base de Uñas Brillo Efecto Gel", price:6.50, image:"images/products/base-de-unas-brillo-efecto-gel-323.jpg", category:"Deporte" },
+    { id:"kit-para-extensiones-de-pestanas-324", name:"Kit para Extensiones de Pestañas", price:22.00, image:"images/products/kit-para-extensiones-de-pestanas-324.jpg", category:"Deporte" },
+    // Para Ella
+    { id:"sombras-pijama-party-325", name:"Sombras Pijama Party", price:12.00, image:"images/products/sombras-pijama-party-325.jpg", category:"Para Ella" },
+    { id:"electro-lip-gloss-326", name:"Electro Lip Gloss", price:5.00, image:"images/products/electro-lip-gloss-326.jpg", category:"Para Ella" },
+    { id:"spray-fijador-easy-bake-327", name:"Spray Fijador Easy Bake", price:12.50, image:"images/products/spray-fijador-easy-bake-327.jpg", category:"Para Ella" },
+    { id:"sombras-pancake-328", name:"Sombras Pancake", price:7.50, image:"images/products/sombras-pancake-328.jpg", category:"Para Ella" },
+    { id:"corrector-y-contorno-2-en-1-329", name:"Corrector y Contorno 2 en 1", price:6.00, image:"images/products/corrector-y-contorno-2-en-1-329.jpg", category:"Para Ella" },
+    { id:"rubor-liquido-330", name:"Rubor Liquido", price:7.00, image:"images/products/rubor-liquido-330.jpg", category:"Para Ella" },
+    { id:"pegamento-de-unas-331", name:"Pegamento de Uñas", price:4.50, image:"images/products/pegamento-de-unas-331.jpg", category:"Para Ella" },
+    { id:"pestanas-1x1-332", name:"Pestañas 1x1", price:5.00, image:"images/products/pestanas-1x1-332.jpg", category:"Para Ella" },
+    { id:"cera-de-barberia-para-cabello-333", name:"Cera de Barberia para Cabello", price:16.00, image:"images/products/cera-de-barberia-para-cabello-333.jpg", category:"Para Ella" },
+    { id:"ganchos-cocodrilo-x5uni-334", name:"Ganchos Cocodrilo X5uni", price:5.00, image:"images/products/ganchos-cocodrilo-x5uni-334.jpg", category:"Para Ella" },
+    { id:"organizador-acrilico-de-labiales-335", name:"Organizador Acrilico de Labiales", price:5.00, image:"images/products/organizador-acrilico-de-labiales-335.jpg", category:"Para Ella" },
+    { id:"polvo-aurora-de-unas-336", name:"Polvo Aurora de Uñas", price:3.50, image:"images/products/polvo-aurora-de-unas-336.jpg", category:"Para Ella" },
+    { id:"paleta-4-en-1-337", name:"Paleta 4 en 1", price:23.00, image:"images/products/paleta-4-en-1-337.jpg", category:"Para Ella" },
+    { id:"cera-para-cejas-338", name:"Cera para Cejas", price:4.50, image:"images/products/cera-para-cejas-338.jpg", category:"Para Ella" },
+    { id:"pegamento-de-pestanas-339", name:"Pegamento de Pestañas", price:5.50, image:"images/products/pegamento-de-pestanas-339.jpg", category:"Para Ella" },
+    { id:"mota-triangular-340", name:"Mota Triangular", price:3.00, image:"images/products/mota-triangular-340.jpg", category:"Para Ella" },
+    { id:"rubor-blush-en-polvo-341", name:"Rubor Blush en Polvo", price:5.00, image:"images/products/rubor-blush-en-polvo-341.jpg", category:"Para Ella" },
+    { id:"gel-para-peinar-extra-fuerte-342", name:"Gel para Peinar Extra Fuerte", price:11.00, image:"images/products/gel-para-peinar-extra-fuerte-342.jpg", category:"Para Ella" },
+    { id:"ampolla-plasma-magica-343", name:"Ampolla Plasma Mágica", price:10.00, image:"images/products/ampolla-plasma-magica-343.jpg", category:"Para Ella" },
+    { id:"ampolla-plasma-nutricion-344", name:"Ampolla Plasma Nutrición", price:10.00, image:"images/products/ampolla-plasma-nutricion-344.jpg", category:"Para Ella" },
+    { id:"delineador-de-cejas-pelo-a-pelo-345", name:"Delineador de Cejas Pelo A Pelo", price:7.50, image:"images/products/delineador-de-cejas-pelo-a-pelo-345.jpg", category:"Para Ella" },
+    { id:"cepillo-5-en-1-346", name:"Cepillo 5 en 1", price:27.00, image:"images/products/cepillo-5-en-1-346.jpg", category:"Para Ella" },
+    { id:"pinceles-para-decoracion-de-unas-347", name:"Pinceles para Decoración de Uñas", price:4.50, image:"images/products/pinceles-para-decoracion-de-unas-347.jpg", category:"Para Ella" },
+    { id:"repuesto-de-rizador-348", name:"Repuesto de Rizador", price:1.50, image:"images/products/repuesto-de-rizador-348.jpg", category:"Para Ella" },
+    { id:"mascarilla-de-labios-de-colageno-349", name:"Mascarilla de Labios de Colageno", price:11.00, image:"images/products/mascarilla-de-labios-de-colageno-349.jpg", category:"Para Ella" },
+    { id:"sello-para-cejas-350", name:"Sello para Cejas", price:7.00, image:"images/products/sello-para-cejas-350.jpg", category:"Para Ella" },
+    { id:"shampoo-para-pestanas-351", name:"Shampoo para Pestañas", price:13.50, image:"images/products/shampoo-para-pestanas-351.jpg", category:"Para Ella" },
+    { id:"accesorios-profesional-de-pestanas-352", name:"Accesorios Profesional de Pestañas", price:13.50, image:"images/products/accesorios-profesional-de-pestanas-352.jpg", category:"Para Ella" },
+    { id:"set-de-aplicadores-de-labial-353", name:"Set de Aplicadores de Labial", price:7.50, image:"images/products/set-de-aplicadores-de-labial-353.jpg", category:"Para Ella" },
+    { id:"labial-glow-lips-efecto-humedo-354", name:"Labial Glow Lips Efecto Húmedo", price:5.50, image:"images/products/labial-glow-lips-efecto-humedo-354.jpg", category:"Para Ella" },
+    { id:"labial-gloss-tiffany-355", name:"Labial Gloss Tiffany", price:5.00, image:"images/products/labial-gloss-tiffany-355.jpg", category:"Para Ella" },
+    { id:"labial-terciopelo-de-jarusa-356", name:"Labial Terciopelo de Jarusa", price:6.00, image:"images/products/labial-terciopelo-de-jarusa-356.jpg", category:"Para Ella" },
+    { id:"labial-fashion-hidratante-con-color-357", name:"Labial Fashion Hidratante con Color", price:5.00, image:"images/products/labial-fashion-hidratante-con-color-357.jpg", category:"Para Ella" },
+    { id:"base-bunny-jarusa-358", name:"Base Bunny Jarusa", price:8.50, image:"images/products/base-bunny-jarusa-358.jpg", category:"Para Ella" },
+    { id:"jabon-materna-359", name:"Jabón Materna", price:4.50, image:"images/products/jabon-materna-359.jpg", category:"Para Ella" },
+    { id:"aclarat-scrub-exfoliante-360", name:"Aclarat Scrub Exfoliante", price:18.50, image:"images/products/aclarat-scrub-exfoliante-360.jpg", category:"Para Ella" },
+    { id:"sombras-nude-samantha-361", name:"Sombras Nude Samantha", price:16.00, image:"images/products/sombras-nude-samantha-361.jpg", category:"Para Ella" },
+    { id:"serum-facial-de-ojeras-362", name:"Serum Facial de Ojeras", price:9.00, image:"images/products/serum-facial-de-ojeras-362.jpg", category:"Para Ella" },
+    { id:"camiseta-manga-larga-polar-363", name:"Camiseta Manga Larga Polar", price:13.50, image:"images/products/camiseta-manga-larga-polar-363.jpg", category:"Para Ella" },
+    { id:"plancha-rozia-dorada-364", name:"Plancha Rozia Dorada", price:60.00, image:"images/products/plancha-rozia-dorada-364.jpg", category:"Para Ella" },
+    { id:"colonia-pyw-365", name:"Colonia Pyw", price:11.50, image:"images/products/colonia-pyw-365.jpg", category:"Para Ella" },
+    { id:"sombras-x80-colores-366", name:"Sombras X80 Colores", price:33.00, image:"images/products/sombras-x80-colores-366.jpg", category:"Para Ella" },
+    { id:"es-posible-lipgloss-brillo-367", name:"Es Posible Lipgloss Brillo", price:8.00, image:"images/products/es-posible-lipgloss-brillo-367.jpg", category:"Para Ella" },
+    { id:"brillo-rollon-fresh-lip-oil-368", name:"Brillo Rollon Fresh Lip Oil", price:2.00, image:"images/products/brillo-rollon-fresh-lip-oil-368.jpg", category:"Para Ella" },
+    { id:"mascarilla-negra-369", name:"Mascarilla Negra", price:9.50, image:"images/products/mascarilla-negra-369.jpg", category:"Para Ella" },
+    // Para Él
+    { id:"calentador-micropolar-370", name:"Calentador Micropolar", price:12.50, image:"images/products/calentador-micropolar-370.jpg", category:"Para Él" },
+    { id:"reloj-mas-pulseras-371", name:"Reloj Más Pulseras", price:10.00, image:"images/products/reloj-mas-pulseras-371.jpg", category:"Para Él" },
+    { id:"set-de-herramientas-x40-piezas-372", name:"Set de Herramientas X40 Piezas", price:12.50, image:"images/products/set-de-herramientas-x40-piezas-372.jpg", category:"Para Él" },
+    { id:"medias-futsaleras-373", name:"Medias Futsaleras", price:6.00, image:"images/products/medias-futsaleras-373.jpg", category:"Para Él" },
+    { id:"reloj-de-hombre-con-billetera-374", name:"Reloj de Hombre con Billetera", price:16.50, image:"images/products/reloj-de-hombre-con-billetera-374.jpg", category:"Para Él" },
+    { id:"set-de-herramientas-375", name:"Set de Herramientas", price:4.50, image:"images/products/set-de-herramientas-375.jpg", category:"Para Él" },
+    { id:"polo-de-hombre-con-frase-376", name:"Polo de Hombre con Frase", price:25.00, image:"images/products/polo-de-hombre-con-frase-376.jpg", category:"Para Él" },
+    { id:"esferas-del-dragon-377", name:"Esferas del Dragon", price:38.00, image:"images/products/esferas-del-dragon-377.jpg", category:"Para Él" },
+    { id:"talco-para-pies-dry-foot-378", name:"Talco para Pies Dry Foot", price:11.00, image:"images/products/talco-para-pies-dry-foot-378.jpg", category:"Para Él" },
+    { id:"desodorante-crol-varon-379", name:"Desodorante Crol Varon", price:7.50, image:"images/products/desodorante-crol-varon-379.jpg", category:"Para Él" },
+    { id:"lentes-2-en-1-hd-dia-y-noche-380", name:"Lentes 2 en 1 Hd Dia y Noche", price:4.50, image:"images/products/lentes-2-en-1-hd-dia-y-noche-380.jpg", category:"Para Él" },
+    { id:"destornillador-electrico-381", name:"Destornillador Eléctrico", price:22.50, image:"images/products/destornillador-electrico-381.jpg", category:"Para Él" },
+    { id:"morral-para-hombre-382", name:"Morral para Hombre", price:4.50, image:"images/products/morral-para-hombre-382.jpg", category:"Para Él" },
+    { id:"medias-antideslizantes-383", name:"Medias Antideslizantes", price:6.00, image:"images/products/medias-antideslizantes-383.jpg", category:"Para Él" },
+    { id:"tazas-hincha-384", name:"Tazas Hincha", price:12.00, image:"images/products/tazas-hincha-384.jpg", category:"Para Él" },
+    { id:"tazas-papa-385", name:"Tazas Papá", price:12.00, image:"images/products/tazas-papa-385.jpg", category:"Para Él" },
+    { id:"chupon-alimentador-386", name:"Chupon Alimentador", price:7.50, image:"images/products/chupon-alimentador-386.jpg", category:"Para Él" },
+    { id:"cepillo-y-peine-de-bebe-387", name:"Cepillo y Peine de Bebe", price:8.00, image:"images/products/cepillo-y-peine-de-bebe-387.jpg", category:"Para Él" },
+    { id:"shampoo-tuinies-2-en-1-388", name:"Shampoo Tuinies 2 en 1", price:7.00, image:"images/products/shampoo-tuinies-2-en-1-388.jpg", category:"Para Él" },
+    { id:"colonia-capitan-america-389", name:"Colonia Capitán América", price:12.00, image:"images/products/colonia-capitan-america-389.jpg", category:"Para Él" },
+    { id:"colonia-de-mickey-mouse-390", name:"Colonia de Mickey Mouse", price:12.50, image:"images/products/colonia-de-mickey-mouse-390.jpg", category:"Para Él" },
+    { id:"colonia-de-minnie-mouse-391", name:"Colonia de Minnie Mouse", price:12.50, image:"images/products/colonia-de-minnie-mouse-391.jpg", category:"Para Él" },
+    { id:"colonia-de-peppa-pig-392", name:"Colonia de Peppa Pig", price:12.50, image:"images/products/colonia-de-peppa-pig-392.jpg", category:"Para Él" },
+    { id:"colonia-de-superman-393", name:"Colonia de Superman", price:12.50, image:"images/products/colonia-de-superman-393.jpg", category:"Para Él" },
+    { id:"colonia-de-hello-kitty-394", name:"Colonia de Hello Kitty", price:12.50, image:"images/products/colonia-de-hello-kitty-394.jpg", category:"Para Él" },
+    { id:"talco-tuinies-x750g-395", name:"Talco Tuinies X750g", price:10.50, image:"images/products/talco-tuinies-x750g-395.jpg", category:"Para Él" },
+    { id:"toalla-para-ninos-396", name:"Toalla para Niños", price:8.00, image:"images/products/toalla-para-ninos-396.jpg", category:"Para Él" },
+    { id:"panos-baby-gardy-x100uni-397", name:"Paños Baby Gardy X100uni", price:4.00, image:"images/products/panos-baby-gardy-x100uni-397.jpg", category:"Para Él" },
+    { id:"panos-tuinies-x25-398", name:"Paños Tuinies X25", price:1.80, image:"images/products/panos-tuinies-x25-398.jpg", category:"Para Él" },
+    { id:"panos-tuinies-x100-399", name:"Paños Tuinies X100", price:4.50, image:"images/products/panos-tuinies-x100-399.jpg", category:"Para Él" },
+    { id:"set-cartuchera-my-melody-400", name:"Set Cartuchera My Melody", price:7.50, image:"images/products/set-cartuchera-my-melody-400.jpg", category:"Para Él" },
+    { id:"set-de-bano-x4-piezas-mickey-401", name:"Set de Baño X4 Piezas Mickey", price:25.00, image:"images/products/set-de-bano-x4-piezas-mickey-401.jpg", category:"Para Él" },
+    { id:"set-cartuchera-avengers-402", name:"Set Cartuchera Avengers", price:7.50, image:"images/products/set-cartuchera-avengers-402.jpg", category:"Para Él" },
+    { id:"colonia-tuinies-de-bebe-403", name:"Colonia Tuinies de Bebe", price:10.50, image:"images/products/colonia-tuinies-de-bebe-403.jpg", category:"Para Él" },
+    { id:"cuaderno-a5-lapiceros-404", name:"Cuaderno A5 + Lapiceros", price:7.00, image:"images/products/cuaderno-a5-lapiceros-404.jpg", category:"Para Él" },
+    { id:"mochila-3-en-1-con-ruedas-405", name:"Mochila 3 en 1 con Ruedas", price:27.00, image:"images/products/mochila-3-en-1-con-ruedas-405.jpg", category:"Para Él" },
+    { id:"gorro-peluche-con-orejas-406", name:"Gorro Peluche con Orejas", price:10.00, image:"images/products/gorro-peluche-con-orejas-406.jpg", category:"Para Él" },
+    { id:"gorro-de-ninos-407", name:"Gorro de Niños", price:6.00, image:"images/products/gorro-de-ninos-407.jpg", category:"Para Él" },
+    { id:"corona-de-ducha-408", name:"Corona de Ducha", price:2.50, image:"images/products/corona-de-ducha-408.jpg", category:"Para Él" },
+    { id:"gorro-cuellera-409", name:"Gorro + Cuellera", price:6.50, image:"images/products/gorro-cuellera-409.jpg", category:"Para Él" },
+    { id:"jabon-liquido-tuinies-300ml-410", name:"Jabon Líquido Tuinies 300ml", price:6.50, image:"images/products/jabon-liquido-tuinies-300ml-410.jpg", category:"Para Él" },
+    { id:"limador-de-unas-para-bebe-411", name:"Limador de Uñas para Bebe", price:11.00, image:"images/products/limador-de-unas-para-bebe-411.jpg", category:"Para Él" },
+    { id:"pantalones-para-ninos-y-nnas-412", name:"Pantalones para Niños y Nñas", price:8.50, image:"images/products/pantalones-para-ninos-y-nnas-412.jpg", category:"Para Él" },
+    { id:"ganchitos-kwaii-413", name:"Ganchitos Kwaii", price:2.50, image:"images/products/ganchitos-kwaii-413.jpg", category:"Para Él" },
+    { id:"pijama-de-dos-piezas-labubu-414", name:"Pijama de Dos Piezas Labubu", price:14.50, image:"images/products/pijama-de-dos-piezas-labubu-414.jpg", category:"Para Él" },
+    { id:"monopolio-415", name:"Monopolio", price:6.00, image:"images/products/monopolio-415.jpg", category:"Para Él" },
+    { id:"carpa-castillo-para-ninos-416", name:"Carpa Castillo para Niños", price:25.00, image:"images/products/carpa-castillo-para-ninos-416.jpg", category:"Para Él" },
+    { id:"mochila-de-colegio-417", name:"Mochila de Colegio", price:28.00, image:"images/products/mochila-de-colegio-417.jpg", category:"Para Él" },
+    { id:"flotador-para-ninos-418", name:"Flotador para Niños", price:16.00, image:"images/products/flotador-para-ninos-418.jpg", category:"Para Él" },
+    { id:"mochila-conejito-419", name:"Mochila Conejito", price:17.00, image:"images/products/mochila-conejito-419.jpg", category:"Para Él" },
+    { id:"colonia-petit-bebe-420", name:"Colonia Petit Bebe", price:12.50, image:"images/products/colonia-petit-bebe-420.jpg", category:"Para Él" },
+    { id:"mochila-3d-de-ninos-421", name:"Mochila 3d de Niños", price:25.00, image:"images/products/mochila-3d-de-ninos-421.jpg", category:"Para Él" },
+    { id:"cartuchera-3d-422", name:"Cartuchera 3d", price:5.00, image:"images/products/cartuchera-3d-422.jpg", category:"Para Él" },
+    { id:"mochila-unicornio-423", name:"Mochila Unicornio", price:22.50, image:"images/products/mochila-unicornio-423.jpg", category:"Para Él" },
+    { id:"barbie-magica-cambia-de-color-424", name:"Barbie Mágica Cambia de Color", price:25.00, image:"images/products/barbie-magica-cambia-de-color-424.jpg", category:"Para Él" },
+    { id:"mantita-de-70cm-425", name:"Mantita de 70cm", price:7.00, image:"images/products/mantita-de-70cm-425.jpg", category:"Para Él" },
+    { id:"mochila-kwaii-de-ninos-426", name:"Mochila Kwaii de Niños", price:20.00, image:"images/products/mochila-kwaii-de-ninos-426.jpg", category:"Para Él" },
+    { id:"shampoo-tuinies-3-en-1-427", name:"Shampoo Tuinies 3 en 1", price:10.00, image:"images/products/shampoo-tuinies-3-en-1-427.jpg", category:"Para Él" },
+    { id:"escalera-de-bano-ninos-428", name:"Escalera de Baño Niños", price:36.00, image:"images/products/escalera-de-bano-ninos-428.jpg", category:"Para Él" },
+    { id:"triciclo-patito-429", name:"Triciclo Patito", price:42.00, image:"images/products/triciclo-patito-429.jpg", category:"Para Él" },
+    // Tecnología
+    { id:"cargador-de-auto-cc4-super-430", name:"Cargador de Auto Cc4 Super", price:24.00, image:"images/products/cargador-de-auto-cc4-super-430.jpg", category:"Tecnología" },
+    { id:"luces-led-fiesta-431", name:"Luces Led Fiesta", price:14.50, image:"images/products/luces-led-fiesta-431.jpg", category:"Tecnología" },
+    { id:"set-reloj-c-audifono-vincha-432", name:"Set Reloj C/audifono Vincha", price:31.00, image:"images/products/set-reloj-c-audifono-vincha-432.jpg", category:"Tecnología" },
+    { id:"parlante-touch-433", name:"Parlante Touch", price:11.00, image:"images/products/parlante-touch-433.jpg", category:"Tecnología" },
+    { id:"teclado-inalambrico-con-mouse-434", name:"Teclado Inalámbrico con Mouse", price:17.00, image:"images/products/teclado-inalambrico-con-mouse-434.jpg", category:"Tecnología" },
+    { id:"audifonos-bluetooth-d400-435", name:"Audifonos Bluetooth D400", price:10.00, image:"images/products/audifonos-bluetooth-d400-435.jpg", category:"Tecnología" },
+    { id:"audifonos-pro6-436", name:"Audifonos Pro6", price:10.00, image:"images/products/audifonos-pro6-436.jpg", category:"Tecnología" },
+    { id:"audifonos-m10-437", name:"Audifonos M10", price:10.00, image:"images/products/audifonos-m10-437.jpg", category:"Tecnología" },
+    { id:"audifono-ultrapods-438", name:"Audifono Ultrapods", price:10.00, image:"images/products/audifono-ultrapods-438.jpg", category:"Tecnología" },
+    { id:"parlante-portatil-439", name:"Parlante Portatil", price:11.50, image:"images/products/parlante-portatil-439.jpg", category:"Tecnología" },
+    { id:"parlante-graffiti-440", name:"Parlante Graffiti", price:29.00, image:"images/products/parlante-graffiti-440.jpg", category:"Tecnología" },
+    { id:"parlante-a500-441", name:"Parlante A500", price:23.50, image:"images/products/parlante-a500-441.jpg", category:"Tecnología" },
+    { id:"cable-data-442", name:"Cable Data", price:5.00, image:"images/products/cable-data-442.jpg", category:"Tecnología" },
+    { id:"aro-led-multicolor-tripode-443", name:"Aro Led Multicolor+ Tripode", price:18.50, image:"images/products/aro-led-multicolor-tripode-443.jpg", category:"Tecnología" },
+    { id:"lentes-con-audifonos-444", name:"Lentes con Audifonos", price:20.00, image:"images/products/lentes-con-audifonos-444.jpg", category:"Tecnología" },
+    { id:"foco-parlante-445", name:"Foco Parlante", price:7.00, image:"images/products/foco-parlante-445.jpg", category:"Tecnología" },
+    { id:"cable-v8-446", name:"Cable V8", price:4.80, image:"images/products/cable-v8-446.jpg", category:"Tecnología" },
+    { id:"extension-hexagonal-447", name:"Extensión Hexagonal", price:8.00, image:"images/products/extension-hexagonal-447.jpg", category:"Tecnología" },
+    { id:"kit-de-grabacion-448", name:"Kit de Grabación", price:16.00, image:"images/products/kit-de-grabacion-448.jpg", category:"Tecnología" },
+    { id:"cinta-led-x5-metros-449", name:"Cinta Led X5 Metros", price:9.50, image:"images/products/cinta-led-x5-metros-449.jpg", category:"Tecnología" },
+    { id:"audifonos-p47-450", name:"Audifonos P47", price:8.50, image:"images/products/audifonos-p47-450.jpg", category:"Tecnología" },
+    // Para la Mascota
+    { id:"peine-secador-de-mascota-451", name:"Peine Secador de Mascota", price:24.50, image:"images/products/peine-secador-de-mascota-451.jpg", category:"Para la Mascota" },
+    { id:"cepillo-para-mascota-con-humificador-452", name:"Cepillo para Mascota con Humificador", price:4.00, image:"images/products/cepillo-para-mascota-con-humificador-452.jpg", category:"Para la Mascota" },
+    { id:"peine-de-mascota-con-boton-453", name:"Peine de Mascota con Botón", price:4.00, image:"images/products/peine-de-mascota-con-boton-453.jpg", category:"Para la Mascota" },
+    { id:"set-de-pelotas-de-mascota-454", name:"Set de Pelotas de Mascota", price:7.00, image:"images/products/set-de-pelotas-de-mascota-454.jpg", category:"Para la Mascota" },
+    { id:"bano-ecologico-de-mascotas-455", name:"Baño Ecológico de Mascotas", price:16.50, image:"images/products/bano-ecologico-de-mascotas-455.jpg", category:"Para la Mascota" },
+    { id:"arenero-con-pala-456", name:"Arenero con Pala", price:8.50, image:"images/products/arenero-con-pala-456.jpg", category:"Para la Mascota" },
+    { id:"maquina-de-mascotas-457", name:"Máquina de Mascotas", price:22.00, image:"images/products/maquina-de-mascotas-457.jpg", category:"Para la Mascota" },
+    // Para el Auto
+    { id:"inflador-de-llantas-458", name:"Inflador de Llantas", price:16.50, image:"images/products/inflador-de-llantas-458.jpg", category:"Para el Auto" },
+    { id:"tapasol-de-auto-459", name:"Tapasol de Auto", price:14.50, image:"images/products/tapasol-de-auto-459.jpg", category:"Para el Auto" },
+    { id:"respalda-de-asiento-460", name:"Respalda de Asiento", price:4.00, image:"images/products/respalda-de-asiento-460.jpg", category:"Para el Auto" },
+    { id:"forro-de-moto-461", name:"Forro de Moto", price:9.00, image:"images/products/forro-de-moto-461.jpg", category:"Para el Auto" },
+    { id:"holder-de-celular-para-auto-462", name:"Holder de Celular para Auto", price:10.00, image:"images/products/holder-de-celular-para-auto-462.jpg", category:"Para el Auto" },
+    { id:"hidrolavadora-463", name:"Hidrolavadora", price:62.00, image:"images/products/hidrolavadora-463.jpg", category:"Para el Auto" },
+  ];
+
+  // ---------- STATE ----------
+  var cart = {}; // { productId: qty }
+
+  function loadCart(){
+    try{
+      var saved = localStorage.getItem("soydivina_cart");
+      if(saved) cart = JSON.parse(saved);
+    }catch(e){ cart = {}; }
+    // Limpieza: si el carrito guardado tiene productos que ya no existen
+    // en el catálogo actual (por ejemplo, tras una actualización), los quitamos.
+    var changed = false;
+    for(var id in cart){
+      if(!getProduct(id)){
+        delete cart[id];
+        changed = true;
+      }
+    }
+    if(changed) saveCart();
+  }
+  function saveCart(){
+    try{ localStorage.setItem("soydivina_cart", JSON.stringify(cart)); }catch(e){}
+  }
+
+  function getProduct(id){
+    for(var i=0;i<PRODUCTS.length;i++){ if(PRODUCTS[i].id===id) return PRODUCTS[i]; }
+    return null;
+  }
+
+  function cartCount(){
+    var c=0;
+    for(var id in cart){ c += cart[id]; }
+    return c;
+  }
+  function cartTotal(){
+    var t=0;
+    for(var id in cart){
+      var p = getProduct(id);
+      if(p) t += p.price * cart[id];
+    }
+    return t;
+  }
+
+  // ---------- RENDER PRODUCT GRIDS ----------
+  var searchQuery = "";
+  var renderedCategories = {}; // track which category grids have been rendered already
+
+  function renderCategoryGrid(grid){
+    var cat = grid.getAttribute("data-category");
+    var items = PRODUCTS.filter(function(p){ return p.category === cat; });
+    if(searchQuery){
+      items = items.filter(function(p){
+        return p.name.toLowerCase().indexOf(searchQuery) !== -1;
+      });
+    }
+    grid.innerHTML = items.map(renderProductCard).join("");
+    var block = grid.closest(".cat-block");
+    if(block){
+      block.style.display = (searchQuery && items.length === 0) ? "none" : "";
+    }
+    bindProductButtons(grid);
+    return items.length;
+  }
+
+  var categoryObserver = null;
+
+  function setupLazyCategoryLoading(){
+    if(categoryObserver) categoryObserver.disconnect();
+    var grids = document.querySelectorAll(".product-grid");
+    categoryObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var grid = entry.target;
+          var cat = grid.getAttribute("data-category");
+          if(!renderedCategories[cat]){
+            renderCategoryGrid(grid);
+            renderedCategories[cat] = true;
+          }
+          categoryObserver.unobserve(grid);
+        }
+      });
+    }, { rootMargin: "400px 0px 400px 0px" });
+    grids.forEach(function(grid){ categoryObserver.observe(grid); });
+  }
+
+  function renderProducts(){
+    var grids = document.querySelectorAll(".product-grid");
+    var totalVisible = 0;
+
+    if(searchQuery){
+      // When searching, render everything immediately so results show across all categories
+      if(categoryObserver) categoryObserver.disconnect();
+      grids.forEach(function(grid){
+        var cat = grid.getAttribute("data-category");
+        var count = renderCategoryGrid(grid);
+        renderedCategories[cat] = true;
+        totalVisible += count;
+      });
+    } else {
+      // No search: keep already-rendered categories in sync (cart qty changes, etc.)
+      // and (re)observe categories not yet rendered for lazy loading.
+      grids.forEach(function(grid){
+        var cat = grid.getAttribute("data-category");
+        if(renderedCategories[cat]){
+          var count = renderCategoryGrid(grid);
+          totalVisible += count;
+        } else {
+          totalVisible += PRODUCTS.filter(function(p){ return p.category === cat; }).length;
+        }
+      });
+      setupLazyCategoryLoading();
+    }
+
+    var noResultsEl = document.getElementById("searchNoResults");
+    if(noResultsEl){
+      noResultsEl.style.display = (searchQuery && totalVisible === 0) ? "block" : "none";
+    }
+    var navEl = document.querySelector(".cat-nav");
+    if(navEl){
+      navEl.style.display = searchQuery ? "none" : "flex";
+    }
+  }
+
+  function renderProductCard(p){
+    var qty = cart[p.id] || 0;
+    var actionsHtml = qty > 0
+      ? '<div class="qty-row" data-id="'+p.id+'">' +
+          '<button class="qty-minus" data-id="'+p.id+'" aria-label="Quitar uno">−</button>' +
+          '<span>'+qty+'</span>' +
+          '<button class="qty-plus" data-id="'+p.id+'" aria-label="Agregar uno">+</button>' +
+        '</div>'
+      : '<button class="add-btn" data-id="'+p.id+'">Agregar</button>';
+
+    var badgeHtml = "";
+    if(p.badge === "popular") badgeHtml = '<span class="product-badge badge-popular">🔥 Popular</span>';
+    else if(p.badge === "nuevo") badgeHtml = '<span class="product-badge badge-nuevo">🆕 Nuevo</span>';
+
+    return (
+      '<article class="product-card">' +
+        '<div class="product-thumb">' +
+          badgeHtml +
+          '<button class="share-btn" data-id="'+p.id+'" aria-label="Compartir producto">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>' +
+          '</button>' +
+          '<img src="'+p.image+'" alt="'+p.name+'" loading="lazy">' +
+        '</div>' +
+        '<div class="product-body">' +
+          '<div class="product-name">'+p.name+'</div>' +
+          '<div class="product-price">S/ '+p.price.toFixed(2)+'</div>' +
+          '<div class="product-actions">'+actionsHtml+'</div>' +
+        '</div>' +
+      '</article>'
+    );
+  }
+
+  function bindProductButtons(context){
+    var ctx = context || document;
+    ctx.querySelectorAll(".add-btn").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-id");
+        cart[id] = (cart[id]||0) + 1;
+        afterCartChange();
+      });
+    });
+    ctx.querySelectorAll(".qty-plus").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-id");
+        cart[id] = (cart[id]||0) + 1;
+        afterCartChange();
+      });
+    });
+    ctx.querySelectorAll(".qty-minus").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var id = btn.getAttribute("data-id");
+        cart[id] = (cart[id]||0) - 1;
+        if(cart[id] <= 0) delete cart[id];
+        afterCartChange();
+      });
+    });
+    ctx.querySelectorAll(".share-btn").forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        e.stopPropagation();
+        var id = btn.getAttribute("data-id");
+        var p = getProduct(id);
+        if(!p) return;
+        var text = "Mira esto en D'Import: " + p.name + " — S/ " + p.price.toFixed(2);
+        var url = window.location.href.split("#")[0] + "#" + id;
+        if(navigator.share){
+          navigator.share({ title: "D'Import", text: text, url: url }).catch(function(){});
+        } else {
+          var waText = encodeURIComponent(text + " " + url);
+          window.open("https://wa.me/?text=" + waText, "_blank");
+        }
+      });
+    });
+  }
+
+  function afterCartChange(){
+    saveCart();
+    renderProducts();
+    renderCartUI();
+  }
+
+  // ---------- CART UI ----------
+  var cartBadge = document.getElementById("cartBadge");
+  var floatBar = document.getElementById("floatBar");
+  var floatCount = document.getElementById("floatCount");
+  var floatTotal = document.getElementById("floatTotal");
+  var drawer = document.getElementById("drawer");
+  var overlay = document.getElementById("overlay");
+  var drawerBody = document.getElementById("drawerBody");
+  var drawerFoot = document.getElementById("drawerFoot");
+  var drawerTotal = document.getElementById("drawerTotal");
+  var sendWaBtn = document.getElementById("sendWaBtn");
+
+  function renderCartUI(){
+    var count = cartCount();
+    var total = cartTotal();
+
+    // badge
+    if(count > 0){
+      cartBadge.style.display = "flex";
+      cartBadge.textContent = count;
+    } else {
+      cartBadge.style.display = "none";
+    }
+
+    // float bar
+    if(count > 0){
+      floatBar.classList.add("show");
+      floatCount.textContent = count;
+      floatTotal.textContent = total.toFixed(2);
+    } else {
+      floatBar.classList.remove("show");
+    }
+
+    // drawer body
+    var ids = Object.keys(cart);
+    if(ids.length === 0){
+      drawerBody.innerHTML = '<div class="drawer-empty"><span class="big">🛍️</span>Tu carrito está vacío.<br>Agrega productos del catálogo.</div>';
+      drawerFoot.style.display = "none";
+    } else {
+      drawerFoot.style.display = "block";
+      drawerBody.innerHTML = ids.map(function(id){
+        var p = getProduct(id);
+        if(!p) return "";
+        var qty = cart[id];
+        return (
+          '<div class="cart-line">' +
+            '<div class="cart-line-thumb"><img src="'+p.image+'" alt="'+p.name+'"></div>' +
+            '<div class="cart-line-info">' +
+              '<div class="cart-line-name">'+p.name+'</div>' +
+              '<div class="cart-line-price">S/ '+p.price.toFixed(2)+'</div>' +
+              '<div class="cart-line-qty">' +
+                '<button class="cl-minus" data-id="'+p.id+'">−</button>' +
+                '<span>'+qty+'</span>' +
+                '<button class="cl-plus" data-id="'+p.id+'">+</button>' +
+                '<span class="cart-line-remove" data-id="'+p.id+'">Quitar</span>' +
+              '</div>' +
+            '</div>' +
+          '</div>'
+        );
+      }).join("");
+      drawerTotal.textContent = total.toFixed(2);
+
+      // bind drawer line buttons
+      drawerBody.querySelectorAll(".cl-plus").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          var id = btn.getAttribute("data-id");
+          cart[id] = (cart[id]||0) + 1;
+          afterCartChange();
+        });
+      });
+      drawerBody.querySelectorAll(".cl-minus").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          var id = btn.getAttribute("data-id");
+          cart[id] = (cart[id]||0) - 1;
+          if(cart[id] <= 0) delete cart[id];
+          afterCartChange();
+        });
+      });
+      drawerBody.querySelectorAll(".cart-line-remove").forEach(function(btn){
+        btn.addEventListener("click", function(){
+          var id = btn.getAttribute("data-id");
+          delete cart[id];
+          afterCartChange();
+        });
+      });
+    }
+
+    // whatsapp link
+    sendWaBtn.href = buildWhatsAppLink();
+  }
+
+  function buildWhatsAppLink(){
+    var lines = ["Hola! 👋 Quiero hacer este pedido en D'Import:", ""];
+    var ids = Object.keys(cart);
+    ids.forEach(function(id){
+      var p = getProduct(id);
+      if(!p) return;
+      var qty = cart[id];
+      lines.push("• " + p.name + " x" + qty + " — S/ " + (p.price*qty).toFixed(2));
+    });
+    lines.push("");
+    lines.push("Total estimado: S/ " + cartTotal().toFixed(2));
+    lines.push("");
+    lines.push("¿Está disponible? Quedo atenta 🛍️");
+    var msg = encodeURIComponent(lines.join("\n"));
+    return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg;
+  }
+
+  // ---------- DRAWER OPEN/CLOSE ----------
+  function openDrawer(){
+    drawer.classList.add("show");
+    overlay.classList.add("show");
+    document.body.style.overflow = "hidden";
+    showCartView();
+  }
+  function closeDrawer(){
+    drawer.classList.remove("show");
+    overlay.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+
+  document.getElementById("openCartBtn").addEventListener("click", openDrawer);
+  document.getElementById("floatBarBtn").addEventListener("click", openDrawer);
+  document.getElementById("closeCartBtn").addEventListener("click", closeDrawer);
+  overlay.addEventListener("click", closeDrawer);
+
+  document.getElementById("clearCartBtn").addEventListener("click", function(){
+    if(confirm("¿Vaciar todo tu carrito?")){
+      cart = {};
+      afterCartChange();
+    }
+  });
+
+  // =========================================================
+  // ---------------- PAYMENT FLOW --------------------------
+  // =========================================================
+  var PAY_CONFIG = {
+    waNumber: WHATSAPP_NUMBER,
+    yape: {
+      titular: "Anggie Fiorella Tarrillo Rojas",
+      numero: "+51 985 238 370"
+    },
+    bcp: {
+      numero: "305-7030503-7-075",
+      numeroPlano: "30570305037075",
+      titular: "Anggie Fiorella Tarrillo Rojas"
+    },
+    cci: {
+      numero: "002-305-170305037075-16",
+      numeroPlano: "00230517030503707516",
+      titular: "Anggie Fiorella Tarrillo Rojas"
+    }
+  };
+
+  var cartFootEl = document.getElementById("drawerFoot");
+  var payScreenEl = document.getElementById("payScreen");
+  var paySuccessEl = document.getElementById("paySuccess");
+  var voucherDataUrl = null;
+
+  function showCartView(){
+    drawerBody.style.display = "";
+    cartFootEl.style.display = (Object.keys(cart).length > 0) ? "block" : "none";
+    payScreenEl.style.display = "none";
+    paySuccessEl.style.display = "none";
+  }
+  function showPayView(){
+    drawerBody.style.display = "none";
+    cartFootEl.style.display = "none";
+    payScreenEl.style.display = "flex";
+    payScreenEl.style.flexDirection = "column";
+    paySuccessEl.style.display = "none";
+    document.getElementById("payTotalAmount").textContent = cartTotal().toFixed(2);
+  }
+  function showSuccessView(){
+    drawerBody.style.display = "none";
+    cartFootEl.style.display = "none";
+    payScreenEl.style.display = "none";
+    paySuccessEl.style.display = "flex";
+    paySuccessEl.style.flexDirection = "column";
+  }
+
+  document.getElementById("openPayBtn").addEventListener("click", function(){
+    if(Object.keys(cart).length === 0) return;
+    showPayView();
+  });
+  document.getElementById("payBackBtn").addEventListener("click", showCartView);
+
+  // Tabs Yape / Transferencia
+  document.querySelectorAll(".pay-tab").forEach(function(tab){
+    tab.addEventListener("click", function(){
+      document.querySelectorAll(".pay-tab").forEach(function(t){ t.classList.remove("active"); });
+      document.querySelectorAll(".pay-panel").forEach(function(p){ p.classList.remove("active"); });
+      tab.classList.add("active");
+      document.getElementById("panel-" + tab.getAttribute("data-tab")).classList.add("active");
+    });
+  });
+
+  // Copy bank numbers
+  document.querySelectorAll(".bank-copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var val = btn.getAttribute("data-copy");
+      var originalText = btn.textContent;
+      function done(){
+        btn.textContent = "¡Copiado!";
+        setTimeout(function(){ btn.textContent = originalText; }, 1500);
+      }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(val).then(done).catch(function(){
+          fallbackCopy(val); done();
+        });
+      } else {
+        fallbackCopy(val); done();
+      }
+    });
+  });
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try{ document.execCommand("copy"); }catch(e){}
+    document.body.removeChild(ta);
+  }
+
+  // Voucher upload + preview
+  var uploadBox = document.getElementById("uploadBox");
+  var voucherInput = document.getElementById("voucherInput");
+  var uploadPreview = document.getElementById("uploadPreview");
+  var uploadPreviewImg = document.getElementById("uploadPreviewImg");
+  var opNumberInput = document.getElementById("opNumberInput");
+  var confirmPayBtn = document.getElementById("confirmPayBtn");
+
+  function checkPayFormValid(){
+    var hasOp = opNumberInput.value.trim().length > 0;
+    var hasVoucher = !!voucherDataUrl;
+    confirmPayBtn.disabled = !(hasOp && hasVoucher);
+  }
+
+  opNumberInput.addEventListener("input", checkPayFormValid);
+
+  voucherInput.addEventListener("change", function(){
+    var file = voucherInput.files && voucherInput.files[0];
+    if(!file) return;
+    if(!file.type.match(/^image\//)){
+      alert("Por favor sube una imagen (JPG o PNG).");
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function(e){
+      // Compress/resize via canvas to keep storage light
+      var img = new Image();
+      img.onload = function(){
+        var maxDim = 900;
+        var w = img.width, h = img.height;
+        if(Math.max(w,h) > maxDim){
+          if(w > h){ h = Math.round(h * maxDim / w); w = maxDim; }
+          else{ w = Math.round(w * maxDim / h); h = maxDim; }
+        }
+        var canvas = document.createElement("canvas");
+        canvas.width = w; canvas.height = h;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img, 0, 0, w, h);
+        voucherDataUrl = canvas.toDataURL("image/jpeg", 0.75);
+        uploadPreviewImg.src = voucherDataUrl;
+        uploadPreview.style.display = "block";
+        checkPayFormValid();
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Save order
+  function saveOrder(method){
+    var orders = [];
+    try{
+      var saved = localStorage.getItem("soydivina_orders");
+      if(saved) orders = JSON.parse(saved);
+    }catch(e){ orders = []; }
+
+    var itemsSummary = Object.keys(cart).map(function(id){
+      var p = getProduct(id);
+      if(!p) return null;
+      return { name: p.name, qty: cart[id], price: p.price };
+    }).filter(Boolean);
+
+    var order = {
+      id: "PED-" + Date.now().toString().slice(-8),
+      date: new Date().toISOString(),
+      method: method,
+      opNumber: opNumberInput.value.trim(),
+      voucher: voucherDataUrl,
+      items: itemsSummary,
+      total: cartTotal()
+    };
+
+    orders.unshift(order);
+    try{
+      localStorage.setItem("soydivina_orders", JSON.stringify(orders));
+    }catch(e){
+      // If storage is full (too many vouchers), drop the oldest ones and retry once
+      try{
+        orders = orders.slice(0, 10);
+        localStorage.setItem("soydivina_orders", JSON.stringify(orders));
+      }catch(e2){}
+    }
+    return order;
+  }
+
+  confirmPayBtn.addEventListener("click", function(){
+    if(confirmPayBtn.disabled) return;
+    var activeTabBtn = document.querySelector(".pay-tab.active");
+    var method = activeTabBtn ? activeTabBtn.getAttribute("data-tab") : "yape";
+
+    saveOrder(method);
+
+    // Build WhatsApp confirmation message (text only — voucher stays in the private panel)
+    var lines = ["Hola! 👋 Ya realicé el pago de mi pedido en D'Import:", ""];
+    Object.keys(cart).forEach(function(id){
+      var p = getProduct(id);
+      if(!p) return;
+      var qty = cart[id];
+      lines.push("• " + p.name + " x" + qty + " — S/ " + (p.price*qty).toFixed(2));
+    });
+    lines.push("");
+    lines.push("Total pagado: S/ " + cartTotal().toFixed(2));
+    lines.push("Método: " + (method === "yape" ? "Yape" : "Transferencia bancaria"));
+    lines.push("N° de operación: " + opNumberInput.value.trim());
+    lines.push("");
+    lines.push("Les comparto mi comprobante 👇");
+    var msg = encodeURIComponent(lines.join("\n"));
+    document.getElementById("successWaBtn").href = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + msg;
+
+    // Clear cart now that payment was registered
+    cart = {};
+    saveCart();
+    renderProducts();
+    renderCartUI();
+
+    showSuccessView();
+  });
+
+  // =========================================================
+  // ---------------- ADMIN PANEL ----------------------------
+  // =========================================================
+  var ADMIN_PASSWORD = "1234"; // <-- Cambia esta clave por una propia cuando quieras
+  var ADMIN_SESSION_KEY = "soydivina_admin_session";
+
+  var adminOverlay = document.getElementById("adminOverlay");
+  var adminPanel = document.getElementById("adminPanel");
+  var adminPassInput = document.getElementById("adminPassInput");
+  var adminLoginError = document.getElementById("adminLoginError");
+  var adminBody = document.getElementById("adminBody");
+
+  document.getElementById("adminTriggerBtn").addEventListener("click", function(){
+    if(sessionStorage.getItem(ADMIN_SESSION_KEY) === "ok"){
+      openAdminPanel();
+    } else {
+      adminOverlay.classList.add("show");
+      adminPassInput.value = "";
+      adminLoginError.style.display = "none";
+      setTimeout(function(){ adminPassInput.focus(); }, 100);
+    }
+  });
+  document.getElementById("adminCloseLogin").addEventListener("click", function(){
+    adminOverlay.classList.remove("show");
+  });
+  document.getElementById("adminLoginBtn").addEventListener("click", attemptAdminLogin);
+  adminPassInput.addEventListener("keydown", function(e){
+    if(e.key === "Enter") attemptAdminLogin();
+  });
+
+  function attemptAdminLogin(){
+    if(adminPassInput.value === ADMIN_PASSWORD){
+      sessionStorage.setItem(ADMIN_SESSION_KEY, "ok");
+      adminOverlay.classList.remove("show");
+      openAdminPanel();
+    } else {
+      adminLoginError.style.display = "block";
+    }
+  }
+
+  document.getElementById("adminLogoutBtn").addEventListener("click", function(){
+    adminPanel.classList.remove("show");
+  });
+
+  function openAdminPanel(){
+    renderAdminOrders();
+    adminPanel.classList.add("show");
+  }
+
+  function getOrders(){
+    try{
+      var saved = localStorage.getItem("soydivina_orders");
+      return saved ? JSON.parse(saved) : [];
+    }catch(e){ return []; }
+  }
+
+  function renderAdminOrders(){
+    var orders = getOrders();
+    if(orders.length === 0){
+      adminBody.innerHTML = '<div class="admin-empty">🗂️<br><br>Todavía no hay pedidos con pago registrado.<br>Cuando una clienta pague y suba su comprobante, aparecerá aquí.</div>';
+      return;
+    }
+
+    adminBody.innerHTML = orders.map(function(order){
+      var d = new Date(order.date);
+      var dateStr = d.toLocaleDateString("es-PE") + " " + d.toLocaleTimeString("es-PE", {hour:"2-digit", minute:"2-digit"});
+      var itemsHtml = order.items.map(function(it){
+        return "• " + it.name + " x" + it.qty + " — S/ " + (it.price*it.qty).toFixed(2);
+      }).join("<br>");
+      var methodLabel = order.method === "yape" ? "YAPE" : "TRANSFERENCIA";
+
+      return (
+        '<div class="order-card" data-order-id="'+order.id+'">' +
+          '<div class="order-card-head">' +
+            '<span class="order-id">'+order.id+'</span>' +
+            '<span class="order-date">'+dateStr+'</span>' +
+          '</div>' +
+          '<span class="order-method '+order.method+'">'+methodLabel+'</span>' +
+          '<div class="order-items">'+itemsHtml+'</div>' +
+          '<div class="order-op">N° operación: <b>'+(order.opNumber || "—")+'</b></div>' +
+          (order.voucher ? '<div class="order-voucher"><img src="'+order.voucher+'" alt="Comprobante"></div>' : '') +
+          '<div class="order-total">' +
+            '<b>Total: S/ '+order.total.toFixed(2)+'</b>' +
+            '<span class="order-delete" data-id="'+order.id+'">Eliminar</span>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+
+    adminBody.querySelectorAll(".order-delete").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        if(!confirm("¿Eliminar este pedido del panel?")) return;
+        var id = btn.getAttribute("data-id");
+        var orders = getOrders().filter(function(o){ return o.id !== id; });
+        localStorage.setItem("soydivina_orders", JSON.stringify(orders));
+        renderAdminOrders();
+      });
+    });
+  }
+
+  // =========================================================
+  // ---------------- SEARCH BAR ------------------------------
+  // =========================================================
+  var searchInput = document.getElementById("searchInput");
+  var searchClearBtn = document.getElementById("searchClearBtn");
+
+  searchInput.addEventListener("input", function(){
+    searchQuery = searchInput.value.trim().toLowerCase();
+    searchClearBtn.style.display = searchQuery ? "flex" : "none";
+    renderProducts();
+  });
+  searchClearBtn.addEventListener("click", function(){
+    searchInput.value = "";
+    searchQuery = "";
+    searchClearBtn.style.display = "none";
+    renderProducts();
+    searchInput.focus();
+  });
+
+  // ---------- INIT ----------
+  loadCart();
+  renderProducts();
+  renderCartUI();
+  showCartView();
+
+})();
+</script>
+
+</body>
+</html>
